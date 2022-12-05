@@ -13,6 +13,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  trailingSlash:true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -27,6 +28,8 @@ const config = {
     locales: ['fr'],
   },
   plugins: [
+    'plugin-image-zoom',
+    'docusaurus2-dotenv',
     [
       '@docusaurus/plugin-content-docs',
       {
