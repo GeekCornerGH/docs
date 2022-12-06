@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'GeekCorner',
-  tagline: 'Bienvenue',
+  tagline: 'Bienvenue! Vous trouverez sur ce site la documentation relative aux tutos sur ma chaîne YouTube.',
   url: 'https://geekcorner.eu.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',

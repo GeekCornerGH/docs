@@ -33,9 +33,6 @@ export default function Home(): JSX.Element {
       title={`Accueil`}
       description="Bienvenue sur le site de GeekCorner">
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
     </Layout>
   );
 }
