@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-title: Bienvenue
+title: Welcome
 ---
 
-# Bienvenue sur la documentation (non officielle) du Helios Launcher
+# Welcome
 
 Cette documentation a pour but d'expliquer en détail la personalisation du Helios Launcher.
 :::info

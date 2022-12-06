@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/geekcorner.png',
   trailingSlash:true,
 
   // GitHub pages deployment config.
@@ -25,7 +25,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'fr',
-    locales: ['fr'],
+    locales: ['fr', 'en'],
   },
   plugins: [
     'plugin-image-zoom',
@@ -64,7 +64,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/geekcornergh/docs/tree/master/',
+            'https://github.com/geekcornergh/docs/edit/master/',
             lastVersion:"current"
         },
         blog: {
@@ -108,8 +108,12 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://geekcorner.eu.org/latestvideo',
-            label: 'Dernière vidéo',
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
+            href: 'https://geekcorner.eu.org/lastvideo',
+            label: 'lastVideo',
             position: 'right',
           },
         ],
