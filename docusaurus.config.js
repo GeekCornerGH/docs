@@ -51,7 +51,7 @@ const config = {
           versions:{
             current: {
               label: "Divers",
-              path:"docs",
+              path:"",
               badge:false
             },
             Helios:{
