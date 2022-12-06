@@ -2,6 +2,11 @@
 title: Partie 1 - Les débuts
 ---
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## Introduction
 Pour ce premier tuto consacré au développement du Helios Launcher, nous allons modifier la page de bienvenue, changer le logo, le nom du dossier où sont stockées les données et le nom du launcher. Nous allons aussi créer le fork du Helios Launcher et installer les logiciels requis pour développer correctement le Helios Launcher.
 
@@ -143,8 +148,10 @@ Puis sous `app/app.ejs`, changer le texte dans la balise `<title>`:
     <script src="./assets/js/scripts/uicore.js"></script>
     <script src="./assets/js/scripts/uibinder.js"></script>
 ```
-### Changer le logo de chargement
+### Changer les logos
 Sur GitHub Desktop, cliquez sur `Repository --> Show in explorer`
+Ouvrez le dossier `app/assets/images/`. SealCircle.png correspond au logo en arrière plan de la page de chargement. LoadingSeal.png sera l'image qui tourne. Assurez-vous que vos images soient au format carré, afin d'éviter que le design du launcher rencontre des problèmes.
+Enfin, retournez à la racine de votre launcher, sous `build`, remplacez le logo `icon.png` par votre logo.
 
 
 ### Changer le texte de bienvenue
@@ -166,3 +173,39 @@ Sous `app/welcome.ejs`, changez le texte de bienvenue:
                 <svg id="welcomeSVG" viewBox="0 0 24.87 13.97">
                     <defs>
 ```
+
+### Changer le dossier de données du launcher
+Par défaut, Helios launcher va stocker ses données dans le dossier ".helioslauncher" se trouvant à l'emplacement suivant:
+<Tabs defaultValue="windows" groupId="operating-systems"
+values={[
+{label: "Windows", value:"windows"},
+{label: "macOS", value:"macos"},
+{label: "Linux", value:"linux"}
+]}>
+<TabItem value="windows"><code>%APPDATA%\.helioslauncher\</code></TabItem>
+<TabItem value="macos"><code>~/Library/Application Support/.helioslauncher/</code></TabItem>
+<TabItem value="linux"><code>~/.helioslauncher/</code></TabItem>
+</Tabs>
+Pour changer celà, il suffit de changer une ligne, dans `app/assets/js/configmanager.js`
+
+```diff title="app/assets/js/configmanager.js" {3,4}
+const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
+// TODO change
+- const dataPath = path.join(sysRoot, '.helioslauncher')
++ const dataPath = path.join(sysRoot, '.monlauncher')
+
+// Forked processes do not have access to electron, so we have this workaround.
+```
+Si vous avez déjà lancé votre launcher, vous devrez supprimer le dossier portant le nom de votre launcher, comme ci-dessous
+<Tabs groupId="operating-systems" values={[
+{label: "Windows", value:"windows"},
+{label: "macOS", value:"macos"},
+{label: "Linux", value:"linux"}
+]}>
+  <TabItem value="windows"><code>%APPDATA%\Mon Launcher\</code></TabItem>
+  <TabItem value="macos"><code>~/Library/Application Support/Mon Launcher/</code></TabItem>
+  <TabItem value="linux"><code>$XDG_CONFIG_HOME/Helios Launcher/</code> ou <code>~/.config/Helios Launcher/</code></TabItem>
+</Tabs>
+
+## Envoyer les modifications sur GitHub
+Retournez sur GitHub Desktop, et remplissez en bas à gauche le formulaire, en indiquant les changements effectués (ou pas, mais c'est à la base la raison d'être de ces champs), puis pressez `Commit to master`. Ensuite, pressez en haut `Push origin`.
