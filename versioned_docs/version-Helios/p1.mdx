@@ -1,0 +1,211 @@
+---
+title: Partie 1 - Les débuts
+---
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+## Introduction
+Pour ce premier tuto consacré au développement du Helios Launcher, nous allons modifier la page de bienvenue, changer le logo, le nom du dossier où sont stockées les données et le nom du launcher. Nous allons aussi créer le fork du Helios Launcher et installer les logiciels requis pour développer correctement le Helios Launcher.
+
+## Video
+Ce tutoriel adapté à partir de la vidéo que vous pouvez regardez ci-dessous: 
+<iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/YeLf8wJVlVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Licence
+Il fut un temps où le launcher était sous licence personalisée, maintenant il est disponible sous <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank">Licence MIT</a>
+
+## Débuter: Créer un fork du projet
+Commencez par créer un <a href="https://github.com/join" target="_BLANK">compte GitHub</a>, puis rendez-vous sur la <a href="https://github.com/dscalzi/helioslauncher">page du projet</a>.  
+<img src="/img/helios-p1/Fork.jpg" width="70%"/>
+
+Vous allez ensuite pouvoir cliquez sur le bouton `Fork`.
+<img src="/img/helios-p1/Fork-2.jpg" width="70%"/>
+
+Attendez quelques instants le temps que GitHub clone le répo du Helios Launcher sur votre compte.
+Cette étape ne devrait pas durer plus de 1 minute.
+Nous allons donc pouvoir passer à la suite.
+
+## Changer le nom du launcher sur GitHub
+
+Nous allons changer le nom du fork GitHub, car nous n'avons pas forcément tous envie qu'il s'appelle HeliosLauncher
+Pour éviter cela, allez dans les réglages de votre référentiel:
+<img src="/img/helios-p1/settings.jpg" width="70%"/>
+
+Vous pourrez changer le nom de votre launcher puis cliquer sur Rename
+<img src="/img/helios-p1/rename.jpg" width="70%"/>
+
+## Installer les programmes pour modifier le code source
+
+Nous allons devoir utiliser 3 programmes:
+### Node.JS
+Ce logiciel sert à executer le code du launcher. Il est au launcher ce qu'est le moteur à la voiture.
+Pour le télécharger, rendez vous <a href="https://nodejs.org" target="_BLANK">le site officiel</a> et téléchargez la dernière version LTS pour votre ordinateur.
+### GitHub Desktop
+Il servira à "pousser" les modifications sur GitHub. Rendez vous <a href="https://desktop.github.com" target="_BLANK">ici</a> pour le téléchargez. Vous devrez ensuite vous connecter sur GitHub.
+:::note
+Si vous préférez, vous pouvez utiliser un autre client Git, comme <a href="https://git-scm.com" target="_blank">Git</a>, <a href="https://www.gitkraken.com/">GitKraken</a>, ou <a href="https://www.sourcetreeapp.com/">Sourcetree</a>.
+:::
+### Visual Studio Code
+Il sert à modifier le code source de notre launcher. Vous pouvez le télécharger gratuitement sur <a href="https://code.visualstudio.com" target="_BLANK">le site de Microsoft</a>.
+:::note
+Si vous préférez utiliser un autre éditeur de code comme <a href="https://www.sublimetext.com">Sublime Text</a> ou <a href="https://www.jetbrains.com/webstorm/">WebStorm</a>, sentez-vous libre.
+:::
+
+## Télécharger le fork
+Nous avons crée notre fork, mais il faut le télécharger localement, donc nous allons utiliser GitHub Desktop.
+Démarrez ce dernier, puis connectez-vous si ce n'est pas déjà fait. Ensuite, pressez le bouton `Clone a repository from the internet` puis séléctionnez votre fork.
+Changez éventuellement l'emplacement de téléchargement. Puis pressez le bouton `Clone`
+
+Un popup vous demandera comment vous souhaitez utiliser votre fork. Répondez par "For my own purposes", puis validez.
+<img src="/img/helios-p1/usefork.jpg" width="70%"/>
+
+## Modifier le fork
+
+### Modifier les métadonnées du launcher
+Cliquez sur `Open with Visual Studio Code`, puis sur la gauche, ouvrez le fichier package.json. Modifiez-le pour qu'il corresponde à vos besoins. Ci-dessous, un exemple:
+```json title="package.json" showLineNumbers {2,3,4,5,6,8,10,52}
+{
+  "name": "monlauncher",
+  "version": "1.9.0",
+  "productName": "Mon Launcher",
+  "description": "Launcher pour accéder à Mon Serveur",
+  "author": "Daniel Scalzi (https://github.com/dscalzi/) + votrenomici",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/pseudogithub/monlauncher",
+  "bugs": {
+    "url": "https://github.com/pseudogithub/monlauncher/issues"
+  },
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder build",
+    "dist:win": "npm run dist -- -w",
+    "dist:mac": "npm run dist -- -m",
+    "dist:linux": "npm run dist -- -l",
+    "lint": "eslint --config .eslintrc.json ."
+  },
+  "engines": {
+    "node": "16.x.x"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "adm-zip": "^0.5.9",
+    "async": "^3.2.4",
+    "discord-rpc-patch": "^4.0.1",
+    "ejs": "^3.1.8",
+    "ejs-electron": "^2.1.1",
+    "electron-updater": "^5.3.0",
+    "fs-extra": "^10.1.0",
+    "github-syntax-dark": "^0.5.0",
+    "got": "^11.8.5",
+    "helios-core": "~0.1.2",
+    "jquery": "^3.6.1",
+    "node-disk-info": "^1.3.0",
+    "node-stream-zip": "^1.15.0",
+    "request": "^2.88.2",
+    "semver": "^7.3.8",
+    "tar-fs": "^2.1.1",
+    "winreg": "^1.2.4"
+  },
+  "devDependencies": {
+    "electron": "^21.3.1",
+    "electron-builder": "^23.6.0",
+    "eslint": "^8.28.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pseudogithub/monlauncher.git"
+  }
+}
+```
+Une fois la modification effectuée, lancez `npm i` dans un Terminal (Terminal --> Nouveau Terminal)
+
+:::note
+Chaque fois que vous modifierez le fichier `package.json`, vous devrez relancer la commande `npm i`.
+:::
+
+### Changer le nom du launcher
+
+Ouvrez `app/frame.ejs` puis aux alentours de la ligne 16, modifiez "Helios Launcher" par le nom de votre launcher.
+```diff {3,4} title="app/frame.ejs"
+            <div id="frameContentWin">
+                <div id="frameTitleDock">
+-                <span id="frameTitleText">Helios Launcher</span>
++                <span id="frameTitleText">Mon Launcher</span>
+                </div>
+                <div id="frameButtonDockWin">`
+```
+Puis sous `app/app.ejs`, changer le texte dans la balise `<title>`:
+```diff title="app/app.ejs" {3,4}
+<head>
+    <meta charset="utf-8" http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-In6B8teKZQll5heMl9bS7CESTbGvuAt3VVV86BUQBDk='"/>
+-    <title>Helios Launcher</title>
++    <title>Mon Launcher</title>
+    <script src="./assets/js/scripts/uicore.js"></script>
+    <script src="./assets/js/scripts/uibinder.js"></script>
+```
+### Changer les logos
+Sur GitHub Desktop, cliquez sur `Repository --> Show in explorer`
+Ouvrez le dossier `app/assets/images/`. SealCircle.png correspond au logo en arrière plan de la page de chargement. 
+Enfin, retournez à la racine de votre launcher, sous `build`, remplacez le logo `icon.png` par votre logo.
+
+
+### Changer le texte de bienvenue
+Sous `app/welcome.ejs`, changez le texte de bienvenue:
+```diff title="app/welcome.ejs {3-6,8,9,12,13}"
+    <div id="welcomeContent">
+        <img id="welcomeImageSeal" src="assets/images/SealCircle.png"/>
+-        <span id="welcomeHeader">WELCOME TO WESTEROSCRAFT</span>
++        <span id="welcomeHeader">BIENVENUE SUR MON SERVEUR</span>
+-        <span id="welcomeDescription">Our mission is to recreate the universe imagined by author George RR Martin in his fantasy series, A Song of Ice and Fire.  Through the collaborative effort of thousands of community members, we have sought to create Westeros as accurately and precisely as possible within Minecraft.  The world we are creating is yours to explore.  Journey from Dorne to Castle Black, and if you aren’t afraid, beyond the Wall itself, but best not delay.  As the words of House Stark ominously warn: Winter is Coming.</span>
++        <span id="welcomeDescription">Nous vous souhaitons de passer un bon moment sur le serveur</span>
+        <br>
+-        <span id="welcomeDescCTA">You are just a few clicks away from Westeros.</span>
++        <span id="welcomeDescCTA">Soyez prêt(e) à vivre une aventure inoubliable.</span>
+        <button id="welcomeButton">
+            <div id="welcomeButtonContent">
+-                CONTINUE
++                CONTINUER
+                <svg id="welcomeSVG" viewBox="0 0 24.87 13.97">
+                    <defs>
+```
+
+### Changer le dossier de données du launcher
+Par défaut, Helios launcher va stocker ses données dans le dossier ".helioslauncher" se trouvant à l'emplacement suivant:
+<Tabs defaultValue="windows" groupId="operating-systems"
+values={[
+{label: "Windows", value:"windows"},
+{label: "macOS", value:"macos"},
+{label: "Linux", value:"linux"}
+]}>
+<TabItem value="windows"><code>%APPDATA%\.helioslauncher\</code></TabItem>
+<TabItem value="macos"><code>~/Library/Application Support/.helioslauncher/</code></TabItem>
+<TabItem value="linux"><code>~/.helioslauncher/</code></TabItem>
+</Tabs>
+Pour changer celà, il suffit de changer une ligne, dans `app/assets/js/configmanager.js`
+
+```diff title="app/assets/js/configmanager.js" {3,4}
+const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
+// TODO change
+- const dataPath = path.join(sysRoot, '.helioslauncher')
++ const dataPath = path.join(sysRoot, '.monlauncher')
+
+// Forked processes do not have access to electron, so we have this workaround.
+```
+Si vous avez déjà lancé votre launcher, vous devrez supprimer le dossier portant le nom de votre launcher, comme ci-dessous
+<Tabs groupId="operating-systems" values={[
+{label: "Windows", value:"windows"},
+{label: "macOS", value:"macos"},
+{label: "Linux", value:"linux"}
+]}>
+  <TabItem value="windows"><code>%APPDATA%\Mon Launcher\</code></TabItem>
+  <TabItem value="macos"><code>~/Library/Application Support/Mon Launcher/</code></TabItem>
+  <TabItem value="linux"><code>$XDG_CONFIG_HOME/Helios Launcher/</code> ou <code>~/.config/Helios Launcher/</code></TabItem>
+</Tabs>
+
+## Envoyer les modifications sur GitHub
+Retournez sur GitHub Desktop, et remplissez en bas à gauche le formulaire, en indiquant les changements effectués (ou pas, mais c'est à la base la raison d'être de ces champs), puis pressez `Commit to master`. Ensuite, pressez en haut `Push origin`.

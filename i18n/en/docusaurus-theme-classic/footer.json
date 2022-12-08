@@ -1,0 +1,42 @@
+{
+  "link.title.Docs": {
+    "message": "Docs",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Réseaux sociaux": {
+    "message": "Social Networks",
+    "description": "The title of the footer links column with title=Réseaux sociaux in the footer"
+  },
+  "link.title.Plus": {
+    "message": "More",
+    "description": "The title of the footer links column with title=Plus in the footer"
+  },
+  "link.item.label.Helios Launcher": {
+    "message": "Helios Launcher",
+    "description": "The label of footer link with label=Helios Launcher linking to /docs/intro"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/GeekCornerGH"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discordapp.com/invite/46zxhbK"
+  },
+  "link.item.label.YouTube": {
+    "message": "YouTube",
+    "description": "The label of footer link with label=YouTube linking to https://youtube.com/GeekCornerYT"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.Contribuer à ce site": {
+    "message": "Contribute to this website",
+    "description": "The label of footer link with label=Contribuer à ce site linking to https://github.com/GeekCornerGH/docs"
+  },
+  "copyright": {
+    "message": "Made with <a href=\"https://docusaurus.io\">Docusaurus</a>",
+    "description": "The footer copyright"
+  }
+}
