@@ -150,7 +150,7 @@ Puis sous `app/app.ejs`, changer le texte dans la balise `<title>`:
 ```
 ### Changer les logos
 Sur GitHub Desktop, cliquez sur `Repository --> Show in explorer`
-Ouvrez le dossier `app/assets/images/`. SealCircle.png correspond au logo en arrière plan de la page de chargement. LoadingSeal.png sera l'image qui tourne. Assurez-vous que vos images soient au format carré, afin d'éviter que le design du launcher rencontre des problèmes.
+Ouvrez le dossier `app/assets/images/`. SealCircle.png correspond au logo en arrière plan de la page de chargement. 
 Enfin, retournez à la racine de votre launcher, sous `build`, remplacez le logo `icon.png` par votre logo.
 
 
@@ -207,5 +207,12 @@ Si vous avez déjà lancé votre launcher, vous devrez supprimer le dossier port
   <TabItem value="linux"><code>$XDG_CONFIG_HOME/Helios Launcher/</code> ou <code>~/.config/Helios Launcher/</code></TabItem>
 </Tabs>
 
+## Tester les modifications
+
+Lancez
+```
+npm start
+```
+et regardez si les changements sont appliqués
 ## Envoyer les modifications sur GitHub
 Retournez sur GitHub Desktop, et remplissez en bas à gauche le formulaire, en indiquant les changements effectués (ou pas, mais c'est à la base la raison d'être de ces champs), puis pressez `Commit to master`. Ensuite, pressez en haut `Push origin`.

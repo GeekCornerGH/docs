@@ -83,6 +83,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      prism:{
+        additionalLanguages:['ejs']
+      },
       colorMode: {
         defaultMode: "dark",
         respectPrefersColorScheme: false,
