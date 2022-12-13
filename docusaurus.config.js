@@ -75,6 +75,12 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         debug: true, // This will enable the plugin in production
+        sitemap: {
+          changefreq: 'daily',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           versions: {
