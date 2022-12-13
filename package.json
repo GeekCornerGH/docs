@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@docusaurus/core": "0.0.0-5410",
+    "@docusaurus/plugin-client-redirects": "0.0.0-5410",
+    "@docusaurus/plugin-pwa": "0.0.0-5410",
     "@docusaurus/preset-classic": "0.0.0-5410",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.2.1",

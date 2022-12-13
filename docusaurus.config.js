@@ -13,7 +13,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/geekcorner.png',
-  trailingSlash:true,
+  trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -46,26 +46,27 @@ const config = {
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        debug: true, // This will enable the plugin in production
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          versions:{
+          versions: {
             current: {
               label: "Divers",
-              path:"",
-              badge:false
+              path: "",
+              badge: false
             },
-            Helios:{
-              label:"Helios Launcher",
-              path:"helios",
+            Helios: {
+              label: "Helios Launcher",
+              path: "helios",
               banner: "none",
-              badge:false
+              badge: false
             }
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/geekcornergh/docs/edit/master/',
-            lastVersion:"current"
+          lastVersion: "current"
         },
         blog: {
           showReadingTime: true,
@@ -83,9 +84,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      prism:{
-        additionalLanguages:['ejs']
-      },
       colorMode: {
         defaultMode: "dark",
         respectPrefersColorScheme: false,
@@ -105,7 +103,7 @@ const config = {
             label: 'Docs',
           },
           {
-            type:"docsVersionDropdown",
+            type: "docsVersionDropdown",
             activeBaseRegex: "docs\/|helios\/"
 
           },
@@ -169,6 +167,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['ejs']
       },
     }),
 };
