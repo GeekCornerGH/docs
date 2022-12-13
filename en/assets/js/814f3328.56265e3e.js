@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgeek_docs=self.webpackChunkgeek_docs||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Bienvenue sur le blog","permalink":"/en/blog/2022/12/08/"}]}')}}]);
