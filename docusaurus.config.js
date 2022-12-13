@@ -28,6 +28,34 @@ const config = {
     locales: ['fr', 'en'],
   },
   plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/GeekCorner.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#1ac4bb',
+          },
+        ],
+      },
+    ],
     'plugin-image-zoom',
     'docusaurus2-dotenv',
     [
