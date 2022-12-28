@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'GeekCorner',
   tagline: 'Bienvenue! Vous trouverez sur ce site la documentation relative aux tutos sur ma chaîne YouTube.',
-  url: 'https://geekcorner.eu.org',
+  url: 'https://docs.geekcorner.eu.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
