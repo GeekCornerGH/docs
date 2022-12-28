@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>GeekCorner Blog</title>
-        <link>https://geekcorner.eu.org/en/blog</link>
+        <link>https://docs.geekcorner.eu.org/en/blog</link>
         <description>GeekCorner Blog</description>
         <lastBuildDate>Thu, 08 Dec 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>en</language>
         <item>
             <title><![CDATA[Bienvenue sur le blog]]></title>
-            <link>https://geekcorner.eu.org/en/blog/2022/12/08/</link>
-            <guid>https://geekcorner.eu.org/en/blog/2022/12/08/</guid>
+            <link>https://docs.geekcorner.eu.org/en/blog/2022/12/08/</link>
+            <guid>https://docs.geekcorner.eu.org/en/blog/2022/12/08/</guid>
             <pubDate>Thu, 08 Dec 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Vous cherchez des storytimes? C'est ici qu'il faut venir!]]></description>
             <content:encoded><![CDATA[<p>Vous cherchez des storytimes? C'est ici qu'il faut venir!</p>]]></content:encoded>
