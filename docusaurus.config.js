@@ -180,6 +180,10 @@ const config = {
                 label: 'YouTube',
                 href: 'https://youtube.com/GeekCornerYT',
               },
+		  {
+		    label: 'Mastodon',
+		    href: 'https://mastodon.geekcorner.eu.org/@GeekCornerM'
+		  }
             ],
           },
           {
