@@ -182,7 +182,7 @@ const config = {
               },
 		  {
 		    label: 'Mastodon',
-		    href: 'https://mastodon.geekcorner.eu.org/@GeekCornerM'
+		    html: '<a rel="me" href="https://mastodon.geekcorner.eu.org/@GeekCornerM">Mastodon</a>'
 		  }
             ],
           },
