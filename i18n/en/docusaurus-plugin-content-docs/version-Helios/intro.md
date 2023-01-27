@@ -5,21 +5,21 @@ title: Welcome
 
 # Welcome
 
-Cette documentation a pour but d'expliquer en détail la personalisation du Helios Launcher.
+This documentation is intended to explain in detail the customization of the Helios Launcher.
 :::info
-<u>Prérequis:</u>  
+<u>Requirements:</u>  
 
-* Connaissances de base en Node.JS
-* Un serveur web (si vous arrivez à installer un CMS comme Azuriom, c'est parfait)
-* Un compte GitHub
+* Basic knowledge of Node.JS
+* A web server (if you can install a CMS like Azuriom, it would be perfect)
+* A GitHub account
 :::
 
 :::danger
-Sur le Discord du Helios Launcher, moi, GeekCorner, ai vu plusieurs personne voulant utiliser Dropbox, MediaFire, ou GitHub pour héberger leurs fichiers. Évitez de le faire, car:
-* Ces sites ne sont pas fait pour héberger des fichiers de la façon qu'utilise Helios Launcher (ne sont donc pas comparable à un serveur web)
-* Vous pourriez facilement recevoir des requêtes DMCA
+On the Helios Launcher Discord, I, GeekCorner, have seen several people wanting to use Dropbox, MediaFire, or GitHub to host their files. Avoid doing this, because:
+* These sites are not designed to host files the way Helios Launcher needs it to be (so they are not comparable to a web server)
+* You could easily receive DMCA requests
 :::
 
 :::caution
-Comme cela a été expliqué plusieurs fois sur GitHub, la fonction "Login offline" ou "Crack" n'est pas supportée par Helios Launcher. Si vous utilisez une version supportant les cracks, aucun support ne sera fourni.
+As has been explained several times on GitHub, the "Login offline" or "Crack" feature is not supported by Helios Launcher. If you are using a version that supports cracks, no support will be provided.
 ::: 
