@@ -1,0 +1,216 @@
+---
+title: Deel 1 - Introductie
+---
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+## Introductie
+Voor deze eerste tutorial gewijd aan de ontwikkeling van de Helios Launcher, zullen we de welkomstpagina aanpassen, het logo, de naam van de map waar de gegevens worden opgeslagen en de naam van de launcher. We zullen ook de Helios Launcher fork aanmaken en de software installeren die nodig is om de Helios Launcher goed te ontwikkelen.
+## Video
+Deze tutorial is gebaseerd op de video die u hieronder kunt bekijken (**in het Frans**): 
+<iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/YeLf8wJVlVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Licentie
+Er was een tijd dat de launcher onder aangepaste licentie was, nu is het beschikbaar onder <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank">MIT Licentie</a>
+
+## Aan de slag: de Helios Launcher fork maken
+Begin met het aanmaken van een <a href="https://github.com/join" target="_BLANK">GitHub-account</a>, ga dan naar de <a href="https://github.com/dscalzi/helioslauncher">projectpagina</a>.  
+<img src="/img/helios-p1/Fork.jpg" width="70%"/>
+
+U klikt dan op de `Fork` knop.
+<img src="/img/helios-p1/Fork-2.jpg" width="70%"/>
+
+Wacht even tot GitHub de Helios Launcher repo naar u account heeft gekloond.
+Deze stap zou niet meer dan 1 minuut moeten duren.
+Dus we kunnen verder.
+
+## Verander de launcher naam op GitHub
+
+We gaan de naam van de GitHub fork veranderen, omdat we niet per se allemaal willen dat het HeliosLauncher heet.
+Om dit te voorkomen ga u naar de instellingen van u archief:
+<img src="/img/helios-p1/settings.jpg" width="70%"/>
+
+U kunt de naam van uw launcher veranderen door te klikken op Rename
+<img src="/img/helios-p1/rename.jpg" width="70%"/>
+
+## Installeer deze programma's om de broncode te wijzigen
+
+We zullen 3 programma's moeten gebruiken:
+### Node.JS
+Deze software wordt gebruikt om de Launcher-code uit te voeren. Het is voor de launcher wat de motor is voor de auto.
+Ga om het te downloaden naar <a href="https://nodejs.org" target="_BLANK">de officiële website</a> en download de laatste LTS-versie voor uw computer.
+### GitHub Desktop
+Het zal worden gebruikt om de wijzigingen op GitHub te "pushen". Ga naar <a href="https://desktop.github.com" target="_BLANK">deze website</a> om het te downloaden. U moet dan inloggen op GitHub.
+:::note
+Desgewenst kun u een andere Git client gebruiken, zoals <a href="https://git-scm.com" target="_blank">Git</a>, <a href="https://www.gitkraken.com/">GitKraken</a>, of <a href="https://www.sourcetreeapp.com/">Sourcetree</a>.
+:::
+### Visual Studio Code
+Het wordt gebruikt om de broncode van onze launcher aan te passen. U kunt het gratis downloaden van <a href="https://code.visualstudio.com" target="_BLANK">Microsoft's website</a>.
+:::note
+Mocht u liever een andere code editor gebruiken, zoals <a href="https://www.sublimetext.com">Sublime Text</a> of <a href="https://www.jetbrains.com/webstorm/">WebStorm</a>, voel u vrij.
+:::
+
+## Download de fork
+We hebben onze fork gemaakt, maar we moeten hem lokaal downloaden, dus we zullen GitHub Desktop gebruiken.
+Start de repository, log dan in als u dat nog niet gedaan hebt. Druk dan op de `Clone a repository from the internet` knop en selecteer u fork.
+Verander de download locatie indien nodig. Druk dan op de `Clone` knop
+
+Een popup zal u vragen hoe u uw vork wilt gebruiken. Antwoord met "Voor mijn eigen doeleinden (For my own purposes)" en valideer dan.
+<img src="/img/helios-p1/usefork.jpg" width="70%"/>
+
+## Wijzig de fork
+
+### Bewerk de launcher metadata
+Klik op `Openen met Visual Studio Code`, open dan links het package.json bestand. Wijzig het naar wens. Hieronder staat een voorbeeld:
+```json title="package.json" showLineNumbers {2,3,4,5,6,8,10,52}
+{
+  "name": "mijnlauncher",
+  "version": "1.9.0",
+  "productName": "Mijn Launcher",
+  "description": "Launcher om op mijn server te komen",
+  "author": "Daniel Scalzi (https://github.com/dscalzi/) + uw naam",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/pseudogithub/mijnlauncher",
+  "bugs": {
+    "url": "https://github.com/pseudogithub/mijnlauncher/issues"
+  },
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder build",
+    "dist:win": "npm run dist -- -w",
+    "dist:mac": "npm run dist -- -m",
+    "dist:linux": "npm run dist -- -l",
+    "lint": "eslint --config .eslintrc.json ."
+  },
+  "engines": {
+    "node": "16.x.x"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "adm-zip": "^0.5.9",
+    "async": "^3.2.4",
+    "discord-rpc-patch": "^4.0.1",
+    "ejs": "^3.1.8",
+    "ejs-electron": "^2.1.1",
+    "electron-updater": "^5.3.0",
+    "fs-extra": "^10.1.0",
+    "github-syntax-dark": "^0.5.0",
+    "got": "^11.8.5",
+    "helios-core": "~0.1.2",
+    "jquery": "^3.6.1",
+    "node-disk-info": "^1.3.0",
+    "node-stream-zip": "^1.15.0",
+    "request": "^2.88.2",
+    "semver": "^7.3.8",
+    "tar-fs": "^2.1.1",
+    "winreg": "^1.2.4"
+  },
+  "devDependencies": {
+    "electron": "^21.3.1",
+    "electron-builder": "^23.6.0",
+    "eslint": "^8.28.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pseudogithub/mijnlauncher.git"
+  }
+}
+```
+Zodra de verandering is aangebracht, voer u `npm i` uit in een Terminal (Terminal --> Nieuwe Terminal)
+
+:::note
+Elke keer dat u het `package.json` bestand aanpast, moet u het `npm i` commando opnieuw uitvoeren.
+:::
+
+### Verander de naam van de launcher
+
+Open `app/frame.ejs` en verander rond regel 16 "Helios Launcher" in de naam van u launcher.
+```diff {3,4} title="app/frame.ejs"
+            <div id="frameContentWin">
+                <div id="frameTitleDock">
+-                <span id="frameTitleText">Helios Launcher</span>
++                <span id="frameTitleText">Mijn Launcher</span>
+                </div>
+                <div id="frameButtonDockWin">`
+```
+Verander dan onder `app/app.ejs` de tekst in de `<title>` tag:
+```diff title="app/app.ejs" {3,4}
+<head>
+    <meta charset="utf-8" http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-In6B8teKZQll5heMl9bS7CESTbGvuAt3VVV86BUQBDk='"/>
+-    <title>Helios Launcher</title>
++    <title>Mijn Launcher</title>
+    <script src="./assets/js/scripts/uicore.js"></script>
+    <script src="./assets/js/scripts/uibinder.js"></script>
+```
+### Verander logo's
+Op GitHub Desktop, klik op `Repository --> Toon in verkenner`.
+Open de map `app/assets/images/`. SealCircle.png is het logo op de achtergrond van de laadpagina. 
+Ga tenslotte terug naar de root van u launcher, onder `build`, vervang het `icon.png` logo door uw logo.
+
+
+### Change the welcome text
+Under `app/welcome.ejs`, change the welcome text:
+```diff title="app/welcome.ejs {3-6,8,9,12,13}"
+    <div id="welcomeContent">
+        <img id="welcomeImageSeal" src="assets/images/SealCircle.png"/>
+-        <span id="welcomeHeader">WELCOME TO WESTEROSCRAFT</span>
++        <span id="welcomeHeader">WELKOM OP MIJN SERVER</span>
+-        <span id="welcomeDescription">Our mission is to recreate the universe imagined by author George RR Martin in his fantasy series, A Song of Ice and Fire.  Through the collaborative effort of thousands of community members, we have sought to create Westeros as accurately and precisely as possible within Minecraft.  The world we are creating is yours to explore.  Journey from Dorne to Castle Black, and if you aren’t afraid, beyond the Wall itself, but best not delay.  As the words of House Stark ominously warn: Winter is Coming.</span>
++        <span id="welcomeDescription">Wij wensen u een goede tijd op de server</span>
+        <br>
+-        <span id="welcomeDescCTA">You are just a few clicks away from Westeros.</span>
++        <span id="welcomeDescCTA">Maak u klaar voor een onvergetelijk avontuur.</span>
+        <button id="welcomeButton">
+            <div id="welcomeButtonContent">
+                CONTINUE
+                <svg id="welcomeSVG" viewBox="0 0 24.87 13.97">
+                    <defs>
+```
+
+### Verander de launcher data folder
+Standaard zal Helios launcher zijn gegevens opslaan in de map ".helioslauncher" op de volgende locatie:
+<Tabs defaultValue="windows" groupId="operating-systems"
+values={[
+{label: "Windows", value:"windows"},
+{label: "macOS", value:"macos"},
+{label: "Linux", value:"linux"}
+]}>
+<TabItem value="windows"><code>%APPDATA%\.helioslauncher\</code></TabItem>
+<TabItem value="macos"><code>~/Library/Application Support/.helioslauncher/</code></TabItem>
+<TabItem value="linux"><code>~/.helioslauncher/</code></TabItem>
+</Tabs>
+Om dit te veranderen, verander gewoon één regel in `app/assets/js/configmanager.js`
+
+```diff title="app/assets/js/configmanager.js" {3,4}
+const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
+// TODO change
+- const dataPath = path.join(sysRoot, '.helioslauncher')
++ const dataPath = path.join(sysRoot, '.mijnlauncher')
+
+// Forked processes do not have access to electron, so we have this workaround.
+```
+Als u u launcher al hebt gestart, moet u de map met de naam van u launcher verwijderen, zoals hieronder
+<Tabs groupId="operating-systems" values={[
+{label: "Windows", value:"windows"},
+{label: "macOS", value:"macos"},
+{label: "Linux", value:"linux"}
+]}>
+  <TabItem value="windows"><code>%APPDATA%\Mijn Launcher\</code></TabItem>
+  <TabItem value="macos"><code>~/Library/Application Support/Mijn Launcher/</code></TabItem>
+  <TabItem value="linux"><code>$XDG_CONFIG_HOME/Helios Launcher/</code> or <code>~/.config/Helios Launcher/</code></TabItem>
+</Tabs>
+
+## Test de veranderingen
+
+Start
+```
+npm start
+```
+en kijk of de veranderingen zijn toegepast
+## Stuur wijzigingen naar GitHub
+Ga terug naar GitHub Desktop, en vul het formulier linksonder in, en geef aan welke veranderingen u gemaakt hebt (of niet, maar daar zijn deze velden in principe voor), en druk dan op `Commit to master`. Druk dan op `Push origin` bovenaan.
