@@ -4,11 +4,11 @@
     "description": "The title of the footer links column with title=Docs in the footer"
   },
   "link.title.Réseaux sociaux": {
-    "message": "Social Networks",
+    "message": "Sociale netwerken",
     "description": "The title of the footer links column with title=Réseaux sociaux in the footer"
   },
   "link.title.Plus": {
-    "message": "More",
+    "message": "Meer",
     "description": "The title of the footer links column with title=Plus in the footer"
   },
   "link.item.label.Helios Launcher": {
@@ -32,11 +32,11 @@
     "description": "The label of footer link with label=Blog linking to /blog"
   },
   "link.item.label.Contribuer à ce site": {
-    "message": "Contribute to this website",
+    "message": "Draag bij aan deze website",
     "description": "The label of footer link with label=Contribuer à ce site linking to https://github.com/GeekCornerGH/docs"
   },
   "copyright": {
-    "message": "Made with <a href=\"https://docusaurus.io\">Docusaurus</a>",
+    "message": "Gemaakt met <a href=\"https://docusaurus.io\">Docusaurus</a>",
     "description": "The footer copyright"
   }
 }
