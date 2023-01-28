@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://docs.geekcorner.eu.org/nl/blog</id>
+    <title>GeekCorner Blog</title>
+    <updated>2022-12-08T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://docs.geekcorner.eu.org/nl/blog"/>
+    <subtitle>GeekCorner Blog</subtitle>
+    <icon>https://docs.geekcorner.eu.org/nl/img/geekcorner.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Bienvenue sur le blog]]></title>
+        <id>https://docs.geekcorner.eu.org/nl/blog/2022/12/08/</id>
+        <link href="https://docs.geekcorner.eu.org/nl/blog/2022/12/08/"/>
+        <updated>2022-12-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Vous cherchez des storytimes? C'est ici qu'il faut venir!]]></summary>
+        <content type="html"><![CDATA[<p>Vous cherchez des storytimes? C'est ici qu'il faut venir!
+Pour le moment, il n'y a rien, mais,</p>]]></content>
+    </entry>
+</feed>
