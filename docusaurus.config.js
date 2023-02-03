@@ -181,20 +181,20 @@ const config = {
                 label: 'YouTube',
                 href: 'https://youtube.com/GeekCornerYT',
               },
-		  {
-		    label: 'Mastodon',
-		    href: 'https://mastodon.geekcorner.eu.org/@GeekCornerM',
-		    rel: 'me'
-		  }
+              {
+                label: 'Mastodon',
+                href: 'https://mastodon.geekcorner.eu.org/@GeekCornerM',
+                rel: 'me'
+              }
             ],
           },
           {
             title: 'Plus',
             items: [
-              {
+              /*{
                 label: 'Blog',
                 to: '/blog',
-              },
+              },*/ //uncomment to show blog
               {
                 label: 'Contribuer à ce site',
                 href: 'https://github.com/GeekCornerGH/docs',
