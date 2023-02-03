@@ -84,11 +84,11 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           versions: {
-            /*current: {
+            current: {
               label: "Divers",
               path: "",
               badge: false
-            },*/
+            },
             Helios: {
               label: "Helios Launcher",
               path: "helios",
@@ -131,6 +131,11 @@ const config = {
         },
         items: [
           {
+            to: '/docs/helios/intro',
+            position: 'left',
+            label: 'Docs'
+          },
+          /*{
             type: 'doc',
             docId: 'intro',
             position: 'left',
@@ -142,7 +147,7 @@ const config = {
             activeBaseRegex: "helios\/"
 
           },
-          /*{ to: '/blog', label: 'Blog', position: 'left' },*/ //Uncomment to show blog
+          /*{ to: '/blog', label: 'Blog', position: 'left' },*/ //Uncomment when misc docs and comments are live
           {
             type: 'localeDropdown',
             position: 'right',
