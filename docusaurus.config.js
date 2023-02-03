@@ -167,7 +167,7 @@ const config = {
             items: [
               {
                 label: 'Helios Launcher',
-                to: '/docs/intro',
+                to: '/docs/helios/intro',
               },
             ],
           },

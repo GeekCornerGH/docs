@@ -13,7 +13,7 @@
   },
   "link.item.label.Helios Launcher": {
     "message": "Helios Launcher",
-    "description": "The label of footer link with label=Helios Launcher linking to /docs/intro"
+    "description": "The label of footer link with label=Helios Launcher linking to /docs/helios/intro"
   },
   "link.item.label.GitHub": {
     "message": "GitHub",

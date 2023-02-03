@@ -17,8 +17,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Lire la documentation
+            to="/docs/helios/intro">
+            Lire la documentation Helios Launcher
           </Link>
         </div>
       </div>
