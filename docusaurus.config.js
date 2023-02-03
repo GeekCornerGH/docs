@@ -138,7 +138,8 @@ const config = {
           },
           {
             type: "docsVersionDropdown",
-            activeBaseRegex: "docs\/|helios\/"
+            // activeBaseRegex: "docs\/|helios\/" Uncomment this line to show original files
+            activeBaseRegex: "helios\/"
 
           },
           /*{ to: '/blog', label: 'Blog', position: 'left' },*/ //Uncomment to show blog
