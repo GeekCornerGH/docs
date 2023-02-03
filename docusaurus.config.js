@@ -84,11 +84,11 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           versions: {
-            current: {
+            /*current: {
               label: "Divers",
               path: "",
               badge: false
-            },
+            },*/
             Helios: {
               label: "Helios Launcher",
               path: "helios",
