@@ -141,7 +141,7 @@ const config = {
             activeBaseRegex: "docs\/|helios\/"
 
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          /*{ to: '/blog', label: 'Blog', position: 'left' },*/ //Uncomment to show blog
           {
             type: 'localeDropdown',
             position: 'right',
