@@ -14,12 +14,12 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <Translate id="homepage.subtitle"><p className="hero__subtitle">Bienvenue! Vous trouverez sur ce site la documentation relative aux tutos sur ma chaîne YouTube.</p></Translate>
+        <Translate><p className="hero__subtitle">Bienvenue! Vous trouverez sur ce site la documentation relative aux tutos sur ma chaîne YouTube.</p></Translate>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/helios/intro">
-            Lire la documentation Helios Launcher
+            <Translate>Lire la documentation Helios Launcher</Translate>
           </Link>
         </div>
       </div>
