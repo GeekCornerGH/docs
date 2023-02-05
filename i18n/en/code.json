@@ -1,4 +1,7 @@
 {
+  "homepage.subtitle": {
+    "message": "Welcome! You'll find there docs relative to my youtube tutorials."
+  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
