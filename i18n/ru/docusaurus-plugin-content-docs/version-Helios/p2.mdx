@@ -1,0 +1,163 @@
+---
+title: Часть 2. Экран загрузки и экран входа в систему
+---
+
+## Введение
+:::note
+После записи видео появилось подключение Microsoft.
+Подробности настройки этого шага вы найдете в части 4 (скоро будет)
+:::
+
+## Видео
+Этот учебник основан на приведенном ниже видео (**на французском языке**)
+<iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/WeCx3j1IglE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Изменить логотип погрузка
+В разделе GitHub Desktop перейдите в `Repository-->Show in Explorer`. Затем перейдите к `app/assets/images`. `LoadingSeal.png` будет изображением, которое остается на заднем плане, а `LoadingText.png` будет изображением, которое вращается. Убедитесь, что ваши изображения имеют квадратный формат, чтобы дизайн пусковой установки не столкнулся с проблемами оформления.  
+Замените 2 фотографии выше на свои, это так просто.
+
+## Настройка экрана входа в Mojang
+:::note
+Подключение через Mojang предлагается только для обратной совместимости.
+:::
+
+В разделе `app/login.ejs`, вы сможете настроить как показано ниже (Этот пример изменен на французский):
+```html showLineNumbers {5,11,18,19,27,28,32,36,42,59,60}
+<div id="loginContainer" style="display: none;">
+    <div id="loginCancelContainer" style="display: none;">
+        <button id="loginCancelButton">
+            <div id="loginCancelIcon">X</div>
+            <span id="loginCancelText">Annuler</span>
+        </button>
+    </div>
+    <div id="loginContent">
+        <form id="loginForm">
+            <img id="loginImageSeal" src="assets/images/SealCircle.png"/>
+            <span id="loginSubheader">CONNEXION VIA MOJANG</span>
+            <div class="loginFieldContainer">
+                <svg id="profileSVG" class="loginSVG" viewBox="40 37 65.36 61.43">
+                    <g>
+                        <path d="M86.77,58.12A13.79,13.79,0,1,0,73,71.91,13.79,13.79,0,0,0,86.77,58.12M97,103.67a3.41,3.41,0,0,0,3.39-3.84,27.57,27.57,0,0,0-54.61,0,3.41,3.41,0,0,0,3.39,3.84Z"/>
+                    </g>
+                </svg>
+                <span class="loginErrorSpan" id="loginEmailError">* Valeur invalide</span>
+                <input id="loginUsername" class="loginField" type="text" placeholder="EMAIL OU NOM D'UTILISATEUR"/>
+            </div>
+            <div class="loginFieldContainer">
+                <svg id="lockSVG" class="loginSVG" viewBox="40 32 60.36 70.43">
+                    <g>
+                        <path d="M86.16,54a16.38,16.38,0,1,0-32,0H44V102.7H96V54Zm-25.9-3.39a9.89,9.89,0,1,1,19.77,0A9.78,9.78,0,0,1,79.39,54H60.89A9.78,9.78,0,0,1,60.26,50.59ZM70,96.2a6.5,6.5,0,0,1-6.5-6.5,6.39,6.39,0,0,1,3.1-5.4V67h6.5V84.11a6.42,6.42,0,0,1,3.39,5.6A6.5,6.5,0,0,1,70,96.2Z"/>
+                    </g>
+                </svg>
+                <span class="loginErrorSpan" id="loginPasswordError">* Requis</span>
+                <input id="loginPassword" class="loginField" type="password" placeholder="MOT DE PASSE"/>
+            </div>
+            <div id="loginOptions">
+                <span class="loginSpanDim">
+                    <a href="https://minecraft.net/password/forgot/">mot de passe oublié?</a>
+                </span>
+                <label id="checkmarkContainer">
+                    <input id="loginRememberOption" type="checkbox" checked>
+                    <span id="loginRememberText" class="loginSpanDim">rester connecté?</span>
+                    <span class="loginCheckmark"></span>
+                </label>
+            </div>
+            <button id="loginButton" disabled>
+                <div id="loginButtonContent">
+                    CONNEXION
+                    <svg id="loginSVG" viewBox="0 0 24.87 13.97">
+                        <defs>
+                            <style>.arrowLine{fill:none;stroke:#FFF;stroke-width:2px;transition: 0.25s ease;}</style>
+                        </defs>
+                        <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02"/>
+                    </svg>
+                    <div class="circle-loader">
+                        <div class="checkmark draw"></div>
+                    </div>
+                    <!--<div class="spinningCircle" id="loginSpinner"></div>-->
+                </div>
+            </button>
+            <div id="loginDisclaimer">
+                <span class="loginSpanDim" id="loginRegisterSpan">
+                    <a href="https://minecraft.net/store/minecraft-java-edition/">Vous n'avez pas de compte Minecraft?</a>
+                </span>
+                <p class="loginDisclaimerText">Votre mot de passe est directement envoyé de mannière sécurisée sur les serveurs de Mojang, sans intermédiaire.</p>
+                <p class="loginDisclaimerText">Mon Launcher n'est pas affilié avec Mojang Studios.</p>
+            </div>
+        </form>
+    </div>
+    <script src="./assets/js/scripts/login.js"></script>
+</div>
+```
+Затем перейдите в `app/assets/lang/en_US.json` и переведите по необходимости (Пример ниже был переведен с английского на французский)
+```json showLineNumbers {3,8,9,11,12,15,16,19,20,23,24,27,28,31,32,35,38-41,45}
+{
+    "html": {
+        "avatarOverlay": "Modifier"
+    },
+    "js": {
+        "login": {
+            "error": {
+                "invalidValue": "* Valeur invalide",
+                "requiredValue": "* Requis",
+                "userMigrated": {
+                    "title": "Erreur durant la connexion:<br>Identifiants invalides",
+                    "desc": "Vous avez essayé de vous connecter avec un compte migré vers Mojang. Essayez de vous connecter avec l'email à la place du nom d'utilisateur."
+                },
+                "invalidCredentials": {
+                    "title": "Erreur durant la connexion:<br>Identifiants invalides",
+                    "desc": "L'e-mail ou le mot de passe que vous avez entré est incorrect. Veuillez réessayer."
+                },
+                "rateLimit": {
+                   "title": "Erreur lors de la connexion:<br>Trop de tentatives",
+                    "desc": "Il y a eu trop de tentatives de connexion avec ce compte récemment. Veuillez réessayer plus tard."
+                },
+                "noInternet": {
+                    "title": "Erreur lors de la connexion:<br>Pas de connexion Internet",
+                    "desc": "Vous devez être connecté à Internet pour vous connecter. Veuillez vous connecter et réessayer."
+                },
+                "authDown": {
+                    "title": "Erreur lors de la connexion:<br>Serveur d'authentification hors ligne",
+                    "desc": "Le serveur d'authentification de Mojang est actuellement hors ligne ou inaccessible. Veuillez patienter un peu et réessayer."
+                },
+                "notPaid": {
+                    "title": "Erreur lors de la connexion:<br>Jeu non acheté",
+                    "desc": "Le compte avec lequel vous essayez de vous connecter n'a pas acheté de copie de Minecraft.<br>Vous pouvez acheter une copie sur <a href=\"https://minecraft.net/\">Minecraft.net</a>."
+                },
+                "unknown": {
+                    "title": "Erreur lors de la connexion:<br>Erreur inconnue"
+                }
+            },
+            "login": "CONNEXION",
+            "loggingIn": "CONNEXION EN COURS",
+            "success": "CONNECTÉ",
+            "tryAgain": "Veuillez réessayer"
+        },
+        "landing": {
+            "launch": {
+                "pleaseWait": "Veuillez patienter..."
+            }
+        }
+    }
+}
+```
+:::note
+При записи видео у меня было расширение, которое корректировало введенный текст, поэтому мой файл был полон ошибок. В норме файл должен быть валидным в любом случае.
+:::
+
+## Изображения экрана загрузки
+Нажмите Repository-->Show in explorer в рабочем столе GitHub.
+Затем откройте папку `app/assets/images`. У вас есть 2 файла: `LoadingSeal.png` и `LoadingText.png`. Первое изображение будет использоваться в качестве фиксированного фона для второго, которое будет вращаться.
+Чтобы завершить этот шаг, вам нужно просто удалить эти 2 изображения и заменить их изображениями по вашему выбору.
+Если вы хотите удалить LoadingText.png, вы можете скачать [это изображение](/img/helios-p2/LoadingText.png) (щелкните правой кнопкой мыши--->`Save Image As`, если изображение не загружается само при открытии ссылки).
+
+## Протестируйте изменения
+
+Запуск 
+```
+npm start
+```
+Если вы все еще можете подключиться через Mojang, вы можете подключиться к пусковой установке. В противном случае мы рассмотрим, как настроить Microsoft в части 4.
+
+## Отправить изменения на GitHub
+Вернитесь на GitHub Desktop и заполните форму слева внизу, указав, какие изменения вы внесли (или нет, но в основном эти поля для этого и предназначены), затем нажмите `Commit to master`. Затем нажмите `Push origin` вверху.
