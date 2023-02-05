@@ -1,4 +1,12 @@
 {
+  "Bienvenue! Vous trouverez sur ce site la documentation relative aux tutos sur ma chaîne YouTube.": {
+    "message": "Welcome! You'll find there docs relative to my youtube tutorials.",
+    "description": "Subtitle"
+  },
+  "Lire la documentation Helios Launcher": {
+    "message": "Read Helios Launcher docs",
+    "description": "Button to access helios launcher docs"
+  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
