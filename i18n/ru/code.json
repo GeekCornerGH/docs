@@ -20,7 +20,7 @@
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.admonition.note": {
-    "message": "note",
+    "message": "ПРИМЕЧАНИЕ",
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
@@ -28,15 +28,15 @@
     "description": "The default label used for the Tip admonition (:::tip)"
   },
   "theme.admonition.danger": {
-    "message": "danger",
+    "message": "опасность",
     "description": "The default label used for the Danger admonition (:::danger)"
   },
   "theme.admonition.info": {
-    "message": "info",
+    "message": "информация",
     "description": "The default label used for the Info admonition (:::info)"
   },
   "theme.admonition.caution": {
-    "message": "caution",
+    "message": "ВНИМАНИЕ",
     "description": "The default label used for the Caution admonition (:::caution)"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
@@ -151,7 +151,7 @@
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
-    "message": "Wijzig deze pagina",
+    "message": "Редактировать эту страницу",
     "description": "The link label to edit the current page"
   },
   "theme.lastUpdated.atDate": {

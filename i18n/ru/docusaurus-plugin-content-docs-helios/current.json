@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Следующий",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.docs": {
+    "message": "документы",
+    "description": "The label for category docs in sidebar tutorialSidebar"
+  }
+}
