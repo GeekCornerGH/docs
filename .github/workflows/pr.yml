@@ -7,7 +7,7 @@ on:
     
 
 jobs:
-  deploy:
+  build-pr:
     name: Building Pull Request website 
     runs-on: ubuntu-latest
     steps:
