@@ -26,7 +26,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/helios/intro">
-            <Translate>Lire la documentation Helios Launcher</Translate>
+            <Translate id="homepage.readheliosdocs">Lire la documentation Helios Launcher</Translate>
           </Link>
 
         </div>
