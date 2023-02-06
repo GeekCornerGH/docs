@@ -3,14 +3,14 @@ title: Deel 3 - Het beginscherm
 ---
 
 ## Introduction
-Dans cette partie, nous allons changer l'écran d'accueil et les liens des réseaux sociaux.
+In dit deel zullen we het beginscherm en de links naar sociale netwerken veranderen.
 
-## Vidéo
-Ce tutoriel est basé sur la vidéo ci-dessous
+## Video
+Deze tutorial is gebaseerd op de onderstaande video (**in het Frans**)
 <iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/HsUwhKvBjpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Traduire la page d'accueil
-Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma part ma traduction
+## Vertaal de homepage
+Ga naar `app/landing.ejs`. Vertaal naar behoefte. Hier is mijn vertaling (**naar het Nederlands**)
 ```diff showLineNumbers title="app/landing.ejs" {6,7,15,16,18,19,29,30,103-106,110,111,120,121,144,145,153,154,156,157,166,167,199,200,221,222,225-228,231,232}
 <div id="landingContainer" style="display: none;">
     <div id="upper">
@@ -18,7 +18,7 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
             <div id="image_seal_container">
                 <img id="image_seal" src="assets/images/SealCircle.png"/>
 -                <div id="updateAvailableTooltip">Update Available</div>
-+                <div id="updateAvailableTooltip">Une mise à jour est diponible</div>
++                <div id="updateAvailableTooltip">Er is een update beschikbaar</div>
             </div>
         </div>
         <div id="content">
@@ -27,10 +27,10 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
             <div id="rightContainer">
                 <div id="user_content">
 -                    <span id="user_text">Username</span>
-+                    <span id="user_text">Nom d'utilisateur</span>
++                    <span id="user_text">Username</span>
                     <div id="avatarContainer">
 -                        <button id="avatarOverlay">Edit</button>
-+                        <button id="avatarOverlay">Modifier</button>
++                        <button id="avatarOverlay">Bewerk</button>
                     </div>
                 </div>
                 <div id="mediaContent">
@@ -41,7 +41,7 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
                                     <path d="M70.70475616319865,83.36934004916053 a15.320781354859122,15.320781354859122 0 1 1 14.454501310561755,-15.296030496450625 A14.850515045097694,14.850515045097694 0 0 1 70.70475616319865,83.36934004916053 M123.25082856443602,55.425620905968366 h-12.375429204248078 A45.54157947163293,45.54157947163293 0 0 0 107.21227231573047,46.243052436416285 l8.613298726156664,-9.108315894326587 a9.727087354538993,9.727087354538993 0 0 0 0,-13.167456673319956 l-3.465120177189462,-3.6631270444574313 a8.489544434114185,8.489544434114185 0 0 0 -12.375429204248078,0 l-8.613298726156664,9.108315894326587 A40.442902639482725,40.442902639482725 0 0 0 81.99114759747292,25.427580514871032 V12.532383284044531 a9.108315894326587,9.108315894326587 0 0 0 -8.811305593424633,-9.306322761594556 h-4.950171681699231 a9.108315894326587,9.108315894326587 0 0 0 -8.811305593424633,9.306322761594556 v12.895197230826497 a40.17064319698927,40.17064319698927 0 0 0 -9.331073620003052,4.0591407789933704 l-8.613298726156664,-9.108315894326587 a8.489544434114185,8.489544434114185 0 0 0 -12.375429204248078,0 L25.58394128451018,23.967279868769744 a9.727087354538993,9.727087354538993 0 0 0 0,13.167456673319956 L34.19724001066683,46.243052436416285 a45.07131316187151,45.07131316187151 0 0 0 -3.6631270444574313,9.083565035918088 h-12.375429204248078 a9.083565035918088,9.083565035918088 0 0 0 -8.811305593424633,9.306322761594556 v5.197680265784193 a9.108315894326587,9.108315894326587 0 0 0 8.811305593424633,9.306322761594556 h11.979415469712139 a45.69008462208391,45.69008462208391 0 0 0 4.0591407789933704,10.642869115653347 l-8.613298726156664,9.108315894326587 a9.727087354538993,9.727087354538993 0 0 0 0,13.167456673319956 l3.465120177189462,3.6631270444574313 a8.489544434114185,8.489544434114185 0 0 0 12.375429204248078,0 l8.613298726156664,-9.108315894326587 a40.49240435629971,40.49240435629971 0 0 0 9.331073620003052,4.0591407789933704 v12.895197230826497 a9.083565035918088,9.083565035918088 0 0 0 8.811305593424633,9.306322761594556 h4.950171681699231 A9.083565035918088,9.083565035918088 0 0 0 81.99114759747292,123.68848839660077 V110.79329116577425 a40.78941465720167,40.78941465720167 0 0 0 9.331073620003052,-4.0591407789933704 l8.613298726156664,9.108315894326587 a8.489544434114185,8.489544434114185 0 0 0 12.375429204248078,0 l3.465120177189462,-3.6631270444574313 a9.727087354538993,9.727087354538993 0 0 0 0,-13.167456673319956 l-8.613298726156664,-9.108315894326587 a45.665333763675406,45.665333763675406 0 0 0 4.034389920584874,-10.642869115653347 h12.004166328120636 a9.108315894326587,9.108315894326587 0 0 0 8.811305593424633,-9.306322761594556 v-5.197680265784193 a9.083565035918088,9.083565035918088 0 0 0 -8.811305593424633,-9.306322761594556 " id="svg_3" class=""/>
                                 </svg>
 -                                <div id="settingsTooltip">Settings</div>
-+                                <div id="settingsTooltip">Paramètres</div>
++                                <div id="settingsTooltip">Instellingen</div>
                             </button>
                         </div>
                     </div>
@@ -117,12 +117,12 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
 -                        <span class="bot_label" id="landingPlayerLabel">SERVER</span>
 +                        <span class="bot_label" id="landingPlayerLabel">SERVEUR</span>
 -                        <span id="player_count">OFFLINE</span>
-+                        <span id="player_count">HORS-LIGNE</span>
++                        <span id="player_count">OFFLINE</span>
                     </div>
                     <div class="bot_divider"></div>
                     <div id="mojangStatusWrapper">
 -                        <span class="bot_label">MOJANG STATUS</span>
-+                        <span class="bot_label">STATUS MOJANG</span>
++                        <span class="bot_label">MOJANG STATUS</span>
                         <span id="mojang_status_icon">&#8226;</span>
                         <div id="mojangStatusTooltip">
                             <div id="mojangStatusTooltipTitle">Services</div>
@@ -132,7 +132,7 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
                             <div id="mojangStatusNEContainer">
                                 <div class="mojangStatusNEBar"></div>
 -                                <div id="mojangStatusNETitle">Non&nbsp;Essential</div>
-+                                <div id="mojangStatusNETitle">Non&nbsp;Essentiel</div>
++                                <div id="mojangStatusNETitle">Non&nbsp;Essentieel</div>
                                 <div class="mojangStatusNEBar"></div>
                             </div>
                             <div id="mojangStatusNonEssentialContainer">
@@ -156,7 +156,7 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
                             <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02"/>
                         </svg>
 -                        &#10;<span id="newsButtonText">NEWS</span>
-+                        &#10;<span id="newsButtonText">ACTUALITÉS</span>
++                        &#10;<span id="newsButtonText">NIEUWS</span>
                     </button>
                 </div>
             </div>
@@ -165,10 +165,10 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
             <div class="bot_wrapper">
                 <div id="launch_content">
 -                    <button id="launch_button">PLAY</button>
-+                    <button id="launch_button">JOUER</button>
++                    <button id="launch_button">SPELEN</button>
                     <div class="bot_divider"></div>
 -                    <button id="server_selection_button" class="bot_label">&#8226; No Server Selected</button>
-+                    <button id="server_selection_button" class="bot_label">&#8226; Aucun serveur sélectionné</button>
++                    <button id="server_selection_button" class="bot_label">&#8226; Geen server geselecteerd</button>
                 </div>
                 <div id="launch_details">
                     <div id="launch_details_left">
@@ -178,7 +178,7 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
                     <div id="launch_details_right">
                         <progress id="launch_progress" value="22" max="100"></progress>
 -                        <span id="launch_details_text" class="bot_label">Please wait..</span>
-+                        <span id="launch_details_text" class="bot_label">Patientez...</span>
++                        <span id="launch_details_text" class="bot_label">Wacht even..</span>
                     </div>
                 </div>
             </div>
@@ -211,7 +211,7 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
                         </svg>
                     </button>
 -                    <span id="newsNavigationStatus">1 of 1</span>
-+                    <span id="newsNavigationStatus">1 sur 1</span>
++                    <span id="newsNavigationStatus">1 of 1</span>
                     <button id="newsNavigateRight">
                         <svg id="newsNavigationRightSVG" viewBox="0 0 24.87 13.97">
                             <defs>
@@ -233,17 +233,17 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
         <div id="newsErrorContainer">
             <div id="newsErrorLoading">
 -                <span id="nELoadSpan" class="newsErrorContent">Checking for News..</span>
-+                <span id="nELoadSpan" class="newsErrorContent">Verification des actualités..</span>
++                <span id="nELoadSpan" class="newsErrorContent">Op zoek naar nieuws...</span>
             </div>
             <div id="newsErrorFailed" style="display: none;">
 -                <span id="nEFailedSpan" class="newsErrorContent">Failed to Load News</span>
-+                <span id="nEFailedSpan" class="newsErrorContent">Impossible de charger les actualités</span>
++                <span id="nEFailedSpan" class="newsErrorContent">Kan het nieuws niet laden</span>
 -                <button id="newsErrorRetry">Try Again</button>
-+                <button id="newsErrorRetry">Réessayer</button>
++                <button id="newsErrorRetry">Probeer het nog eens.</button>
             </div>
             <div id="newsErrorNone" style="display: none;">
 -                <span id="nENoneSpan" class="newsErrorContent">No News</span>
-+                <span id="nENoneSpan" class="newsErrorContent">Aucune actualité disponible</span>
++                <span id="nENoneSpan" class="newsErrorContent">Geen nieuws beschikbaar</span>
             </div>
         </div>
     </div>
@@ -251,9 +251,9 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
 </div>
 ```
 
-## Les réseaux sociaux
-Lors de l'étape précédente, nous avions un élement div comportant l'identifiant `mediaContent`. C'est là que sont disposés les réseaux sociaux.
-Par exemple, si je veux changer YouTube et mettre le lien de ma chaîne, voici mes modifications:
+## Sociale netwerken
+In de vorige stap hadden we een div-element met de identifier `mediaContent`. Hierin worden de sociale netwerken geplaatst.
+Als ik bijvoorbeeld YouTube wil veranderen en de link van mijn kanaal wil plaatsen, zijn hier mijn wijzigingen:
 
 ```diff title="app/landing.ejs" {2-3}
 <div class="mediaContainer">
@@ -267,8 +267,8 @@ Par exemple, si je veux changer YouTube et mettre le lien de ma chaîne, voici m
     </a>
 </div>
 ```
-J'ai en fait remplacé le `#` par l'url de ma chaîne YouTube, et ai simplement supprimé le `disabled` afin de rendre le bouton cliquable.
-Pour supprimer YouTube, voici ce qu'il aurait fallu faire dans mon exemple.
+Ik heb eigenlijk de `#` vervangen door de url van mijn YouTube-kanaal, en gewoon de `disabled` verwijderd om de knop klikbaar te maken.
+Om YouTube te verwijderen, is dit wat ik in mijn voorbeeld zou hebben gedaan.
 ```diff title="app/landing.ejs"
 -<div class="mediaContainer">
 -    <a href="#" class="mediaURL" id="youtubeURL" disabled>
@@ -281,8 +281,8 @@ Pour supprimer YouTube, voici ce qu'il aurait fallu faire dans mon exemple.
 -</div>
 ```
 
-## Mon skin est torse nu!!!
-Pas de panique! Sous `app/assets/js/scripts/landing.js`, faites la modification suivante (devrait être incluse de base sur les dernières versions): 
+## Mijn skin is zonder shirt!!!
+Geen paniek! Breng onder app/assets/js/scripts/landing.js de volgende wijziging aan (zou op de nieuwste versies standaard opgenomen moeten zijn):
 ```diff title="app/assets/js/scripts/landing.js"
 // Bind selected account
 function updateSelectedAccount(authUser){
@@ -300,21 +300,21 @@ function updateSelectedAccount(authUser){
 }
 ```
 
-## Les status Mojang (développeurs expérimentés)
+## Mojang status (ervaren ontwikkelaars)
 
-Il vous faudra créer une fonction basée sur [ces lignes](https://github.com/dscalzi/helios-core/blob/master/lib/mojang/rest/MojangRestAPI.ts#L84-L152), qui traduit la propriété `name`.
+U moet een functie maken op basis van [deze regels](https://github.com/dscalzi/helios-core/blob/master/lib/mojang/rest/MojangRestAPI.ts#L84-L152), die de eigenschap `naam` vertaalt.
 
-## Changer le status du serveur
-Toujours dans `app/assets/js/scripts/landing.js`, modifiez cette fois-ci les lignes suivantes selon vos besoins:
+## Verander server status
+Nog steeds in `app/assets/js/scripts/landing.js`, wijzig deze keer de volgende regels zoals nodig:
 ```diff title="app/assets/js/scripts/landing.js"
 const refreshServerStatus = async function(fade = false){
     loggerLanding.info('Refreshing Server Status')
     const serv = DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer())
 
 -    let pLabel = 'SERVER'
-+    let pLabel = 'SERVEUR'
++    let pLabel = 'SERVER'
 -    let pVal = 'OFFLINE'
-+    let pVal = 'HORS-LIGNE'
++    let pVal = 'OFFLINE'
 
     try {
         const serverURL = new URL('my://' + serv.getAddress())
@@ -322,7 +322,7 @@ const refreshServerStatus = async function(fade = false){
         const servStat = await getServerStatus(47, serverURL.hostname, Number(serverURL.port))
         console.log(servStat)
 -        pLabel = 'PLAYERS'
-+        pLabel = 'JOUEURS'
++        pLabel = 'SPELERS'
         pVal = servStat.players.online + '/' + servStat.players.max
 
     } catch (err) {
@@ -343,13 +343,13 @@ const refreshServerStatus = async function(fade = false){
 }
 ```
 
-## Tester les modifications
+## Test de veranderingen
 
-Lancez
+Launch
 ```
 npm start
 ```
-Si la page d'accueil est traduite, c'est parfait!
+Als de homepage vertaald is, is het perfect!
 
-## Envoyer les modifications sur GitHub
-Retournez sur GitHub Desktop, et remplissez en bas à gauche le formulaire, en indiquant les changements effectués (ou pas, mais c'est à la base la raison d'être de ces champs), puis pressez `Commit to master`. Ensuite, pressez en haut `Push origin`.
+## Stuur wijzigingen naar GitHub
+Ga terug naar GitHub Desktop, en vul het formulier linksonder in, en geef aan welke veranderingen je gemaakt hebt (of niet, maar daar zijn deze velden in principe voor), en druk dan op `Commit to master`. Druk dan op `Push origin` bovenaan.
