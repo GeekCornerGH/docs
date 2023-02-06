@@ -255,7 +255,7 @@ Rendez-vous sous `app/landing.ejs`. Traduisez selon vos besoins. Voici pour ma p
 Lors de l'étape précédente, nous avions un élement div comportant l'identifiant `mediaContent`. C'est là que sont disposés les réseaux sociaux.
 Par exemple, si je veux changer YouTube et mettre le lien de ma chaîne, voici mes modifications:
 
-```diff title="app/landing.ejs"
+```diff title="app/landing.ejs" {2-3}
 <div class="mediaContainer">
 -    <a href="#" class="mediaURL" id="youtubeURL" disabled>
 +    <a href="https://youtube.com/GeekCornerYT" class="mediaURL" id="youtubeURL">
@@ -267,3 +267,89 @@ Par exemple, si je veux changer YouTube et mettre le lien de ma chaîne, voici m
     </a>
 </div>
 ```
+J'ai en fait remplacé le `#` par l'url de ma chaîne YouTube, et ai simplement supprimé le `disabled` afin de rendre le bouton cliquable.
+Pour supprimer YouTube, voici ce qu'il aurait fallu faire dans mon exemple.
+```diff title="app/landing.ejs"
+-<div class="mediaContainer">
+-    <a href="#" class="mediaURL" id="youtubeURL" disabled>
+-        <svg id="youtubeSVG" class="mediaSVG" viewBox="35.34 34.3575 70.68 68.71500">
+-            <g>
+-                <path d="M84.8,69.52,65.88,79.76V59.27Zm23.65.59c0-5.14-.79-17.63-3.94-20.57S99,45.86,73.37,45.86s-28,.73-31.14,3.68S38.29,65,38.29,70.11s.79,17.63,3.94,20.57,5.52,3.68,31.14,3.68,28-.74,31.14-3.68,3.94-15.42,3.94-20.57"/>
+-            </g>
+-        </svg>
+-    </a>
+-</div>
+```
+
+## Mon skin est torse nu!!!
+Pas de panique! Sous `app/assets/js/scripts/landing.js`, faites la modification suivante (devrait être incluse de base sur les dernières versions): 
+```diff title="app/assets/js/scripts/landing.js"
+// Bind selected account
+function updateSelectedAccount(authUser){
+    let username = 'No Account Selected'
+    if(authUser != null){
+        if(authUser.displayName != null){
+            username = authUser.displayName
+        }
+        if(authUser.uuid != null){
+-            document.getElementById('avatarContainer').style.backgroundImage = `url('https://crafatar.com/renders/body/${authUser.uuid}')`
++            document.getElementById('avatarContainer').style.backgroundImage = `url('https://mc-heads.net/body/${authUser.uuid}/right')`
+        }
+    }
+    user_text.innerHTML = username
+}
+```
+
+## Les status Mojang (développeurs expérimentés)
+
+Il vous faudra créer une fonction basée sur [ces lignes](https://github.com/dscalzi/helios-core/blob/master/lib/mojang/rest/MojangRestAPI.ts#L84-L152), qui traduit la propriété `name`.
+
+## Changer le status du serveur
+Toujours dans `app/assets/js/scripts/landing.js`, modifiez cette fois-ci les lignes suivantes selon vos besoins:
+```diff title="app/assets/js/scripts/landing.js"
+const refreshServerStatus = async function(fade = false){
+    loggerLanding.info('Refreshing Server Status')
+    const serv = DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer())
+
+-    let pLabel = 'SERVER'
++    let pLabel = 'SERVEUR'
+-    let pVal = 'OFFLINE'
++    let pVal = 'HORS-LIGNE'
+
+    try {
+        const serverURL = new URL('my://' + serv.getAddress())
+
+        const servStat = await getServerStatus(47, serverURL.hostname, Number(serverURL.port))
+        console.log(servStat)
+-        pLabel = 'PLAYERS'
++        pLabel = 'JOUEURS'
+        pVal = servStat.players.online + '/' + servStat.players.max
+
+    } catch (err) {
+        loggerLanding.warn('Unable to refresh server status, assuming offline.')
+        loggerLanding.debug(err)
+    }
+    if(fade){
+        $('#server_status_wrapper').fadeOut(250, () => {
+            document.getElementById('landingPlayerLabel').innerHTML = pLabel
+            document.getElementById('player_count').innerHTML = pVal
+            $('#server_status_wrapper').fadeIn(500)
+        })
+    } else {
+        document.getElementById('landingPlayerLabel').innerHTML = pLabel
+        document.getElementById('player_count').innerHTML = pVal
+    }
+    
+}
+```
+
+## Tester les modifications
+
+Lancez
+```
+npm start
+```
+Si la page d'accueil est traduite, c'est parfait!
+
+## Envoyer les modifications sur GitHub
+Retournez sur GitHub Desktop, et remplissez en bas à gauche le formulaire, en indiquant les changements effectués (ou pas, mais c'est à la base la raison d'être de ces champs), puis pressez `Commit to master`. Ensuite, pressez en haut `Push origin`.
