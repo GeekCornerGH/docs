@@ -1,4 +1,12 @@
 {
+  "homepage.tagline": {
+    "message": "Welkom! Je vindt hier docs met betrekking tot mijn youtube tutorials.",
+    "description": "Subtitle"
+  },
+  "homepage.readheliosdocs": {
+    "message": "Lees de Helios Launcher docs",
+    "description": "Button to access helios launcher docs"
+  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
