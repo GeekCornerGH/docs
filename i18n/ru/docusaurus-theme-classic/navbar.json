@@ -16,7 +16,7 @@
     "description": "Navbar item with label GitHub"
   },
   "item.label.lastVideo": {
-    "message": "Last Video (in french)",
+    "message": "Последнее видео (на французском языке)",
     "description": "Navbar item with label lastVideo"
   }
 }
