@@ -29,6 +29,14 @@ const config = {
   },
   plugins: [
     [
+      require.resolve("docusaurus-plugin-search-local"),
+      {
+        indexPages: true,
+        hashed: true,
+        highlightSearchTermsOnTargetPage:true
+      },
+    ],
+    [
       '@docusaurus/plugin-pwa',
       {
         debug: true,
