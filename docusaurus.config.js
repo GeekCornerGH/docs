@@ -67,6 +67,18 @@ const config = {
         sidebarPath: require.resolve('./sidebars.js'),
       },
     ],
+    [
+      /** @type {import('@docusaurus/plugin-client-redirects').Options} */
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: ["/helios", "/docs/helios", "/helios/", "/docs/helios/"],
+            to: "/docs/helios/intro"
+          }
+        ],
+      }
+    ]
   ],
 
   presets: [
