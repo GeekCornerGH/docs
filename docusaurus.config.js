@@ -66,7 +66,7 @@ const config = {
         routeBasePath: 'helios',
         sidebarPath: require.resolve('./sidebars.js'),
       },
-    ],
+    ]
   ],
 
   presets: [

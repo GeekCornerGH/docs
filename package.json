@@ -15,10 +15,10 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "0.0.0-5410",
-    "@docusaurus/plugin-client-redirects": "0.0.0-5410",
-    "@docusaurus/plugin-pwa": "0.0.0-5410",
-    "@docusaurus/preset-classic": "0.0.0-5410",
+    "@docusaurus/core": "0.0.0-5483",
+    "@docusaurus/plugin-client-redirects": "0.0.0-5483",
+    "@docusaurus/plugin-pwa": "0.0.0-5483",
+    "@docusaurus/preset-classic": "0.0.0-5483",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.2.1",
     "docusaurus2-dotenv": "^1.4.0",
@@ -28,11 +28,11 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@algolia/client-search": "4.9.1",
-    "@docusaurus/module-type-aliases": "2.2.0",
-    "@docusaurus/types": "^2.2.0",
-    "@tsconfig/docusaurus": "^1.0.6",
-    "typescript": "^4.9.4",
+    "@algolia/client-search": "4.14.3",
+    "@docusaurus/module-type-aliases": "0.0.0-5483",
+    "@docusaurus/types": "0.0.0-5483",
+    "@tsconfig/docusaurus": "1.0.6",
+    "typescript": "^4.9.5",
     "webpack": "4"
   },
   "browserslist": {
@@ -51,7 +51,6 @@
     "node": ">=16.14"
   },
   "peerDependencies": {
-    "@algolia/client-search": "4.9.1",
     "webpack": "4"
   }
 }
