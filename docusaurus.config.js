@@ -11,7 +11,7 @@ const config = {
   url: 'https://docs.geekcorner.eu.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/geekcorner.png',
   trailingSlash: true,
 
