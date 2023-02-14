@@ -11,7 +11,7 @@ const config = {
   url: 'https://docs.geekcorner.eu.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/geekcorner.png',
   trailingSlash: true,
 
@@ -66,7 +66,7 @@ const config = {
         routeBasePath: 'helios',
         sidebarPath: require.resolve('./sidebars.js'),
       },
-    ],
+    ]
   ],
 
   presets: [
@@ -214,6 +214,13 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ['ejs']
       },
+      algolia: {
+        appId: "6RFBY32AJ4",
+        apiKey: "f9396edbeb75cecc519ebb5cf49ff001",
+        indexName: "geekcorner-eu",
+        searchPagePath: 'search',
+        contextualSearch: true
+      }
     }),
 };
 
