@@ -216,7 +216,7 @@ const config = {
       },
       algolia: {
         appId: "6RFBY32AJ4",
-        apiKey: "f9396edbeb75cecc519ebb5cf49ff001",
+        apiKey: "e2d11db365439274ba5bfded32750b7d",
         indexName: "geekcorner-eu",
         searchPagePath: 'search',
         contextualSearch: true
