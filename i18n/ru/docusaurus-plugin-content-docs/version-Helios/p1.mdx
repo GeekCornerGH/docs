@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 В этом первом уроке, посвященном разработке Helios Launcher, мы изменим страницу приветствия, поменяем логотип, название папки, в которой хранятся данные, и название программы запуска. Мы также создадим форк Helios Launcher и установим программное обеспечение, необходимое для правильной разработки Helios Launcher.
 ## Видео
 Это руководство основано на видео, которое вы можете посмотреть ниже (**на французском языке**): 
-<iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/YeLf8wJVlVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/YeLf8wJVlVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ## Лицензия
 Было время, когда программа запуска была под пользовательской лицензией, теперь она доступна под <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank">лицензией MIT</a>.
@@ -155,7 +155,7 @@ import TabItem from '@theme/TabItem';
 
 ### Изменить текст приветствия
 В разделе `app/welcome.ejs` измените текст приветствия:
-```diff title="app/welcome.ejs {3-6,8,9,12,13}"
+```diff title="app/welcome.ejs" {3-6,8,9,12,13}
     <div id="welcomeContent">
         <img id="welcomeImageSeal" src="assets/images/SealCircle.png"/>
 -        <span id="welcomeHeader">WELCOME TO WESTEROSCRAFT</span>
@@ -174,15 +174,10 @@ import TabItem from '@theme/TabItem';
 
 ### Изменить папку данных пусковой установки
 По умолчанию программа запуска Helios будет хранить свои данные в папке ".helioslauncher", расположенной в следующем месте:
-<Tabs defaultValue="windows" groupId="operating-systems"
-values={[
-{label: "Windows", value:"windows"},
-{label: "macOS", value:"macos"},
-{label: "Linux", value:"linux"}
-]}>
-<TabItem value="windows"><code>%APPDATA%\.helioslauncher\</code></TabItem>
-<TabItem value="macos"><code>~/Library/Application Support/.helioslauncher/</code></TabItem>
-<TabItem value="linux"><code>~/.helioslauncher/</code></TabItem>
+<Tabs defaultValue="windows" groupId="operating-systems">
+<TabItem value="windows" label="Windows"><code>%APPDATA%\.helioslauncher\</code></TabItem>
+<TabItem value="macos" label="macOS"><code>~/Library/Application Support/.helioslauncher/</code></TabItem>
+<TabItem value="linux" label="Linux"><code>~/.helioslauncher/</code></TabItem>
 </Tabs>
 Чтобы изменить это, просто измените одну строку в файле `app/assets/js/configmanager.js`.
 
@@ -195,14 +190,10 @@ const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.e
 // Forked processes do not have access to electron, so we have this workaround.
 ```
 Если вы уже запустили свою программу запуска, вам придется удалить папку с именем вашей программы запуска, как показано ниже
-<Tabs groupId="operating-systems" values={[
-{label: "Windows", value:"windows"},
-{label: "macOS", value:"macos"},
-{label: "Linux", value:"linux"}
-]}>
-  <TabItem value="windows"><code>%APPDATA%\My Launcher\</code></TabItem>
-  <TabItem value="macos"><code>~/Library/Application Support/My Launcher/</code></TabItem>
-  <TabItem value="linux"><code>$XDG_CONFIG_HOME/Helios Launcher/</code> or <code>~/.config/Helios Launcher/</code></TabItem>
+<Tabs defaultValue="windows" groupId="operating-systems">
+  <TabItem value="windows" label="Windows"><code>%APPDATA%\My Launcher\</code></TabItem>
+  <TabItem value="macos" label="macOS"><code>~/Library/Application Support/My Launcher/</code></TabItem>
+  <TabItem value="linux" label="Linux"><code>$XDG_CONFIG_HOME/Helios Launcher/</code> or <code>~/.config/Helios Launcher/</code></TabItem>
 </Tabs>
 
 ## Протестируйте изменения
