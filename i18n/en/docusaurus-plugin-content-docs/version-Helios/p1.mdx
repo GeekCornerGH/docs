@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 ## Introduction
 For this first tutorial dedicated to the development of the Helios Launcher, we will modify the welcome page, change the logo, the name of the folder where the data are stored and the name of the launcher. We will also create the Helios Launcher fork and install the software required to properly develop the Helios Launcher.
+
 ## Video
 This tutorial is based on the video you can watch below (**in French**): 
 <iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/YeLf8wJVlVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
@@ -121,10 +122,17 @@ Click on `Open with Visual Studio Code`, then on the left, open the package.json
   }
 }
 ```
-Once the change is made, run `npm i` in a Terminal (Terminal --> New Terminal)
+Once the modification is done, install the dependencies via a Terminal window (Terminal --> New Terminal)
+
+```bash npm2yarn
+npm i
+```
 
 :::note
-Each time you modify the `package.json` file, you will have to run the `npm i` command again.
+Each time you modify the `package.json` file, you will have to run the command again:
+```bash npm2yarn
+npm i
+```
 :::
 
 ### Change the name of the launcher
@@ -167,7 +175,8 @@ Under `app/welcome.ejs`, change the welcome text:
 +        <span id="welcomeDescCTA">Get ready for an unforgettable adventure.</span>
         <button id="welcomeButton">
             <div id="welcomeButtonContent">
-                CONTINUE
+-                CONTINUER
++                CONTINUE
                 <svg id="welcomeSVG" viewBox="0 0 24.87 13.97">
                     <defs>
 ```
@@ -199,7 +208,7 @@ If you have already launched your launcher, you will have to delete the folder w
 ## Test the changes
 
 Launch
-```
+```bash npm2yarn
 npm start
 ```
 and see if the changes are applied
