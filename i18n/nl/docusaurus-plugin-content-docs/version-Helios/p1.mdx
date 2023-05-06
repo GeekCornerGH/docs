@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 Voor deze eerste tutorial gewijd aan de ontwikkeling van de Helios Launcher, zullen we de welkomstpagina aanpassen, het logo, de naam van de map waar de gegevens worden opgeslagen en de naam van de launcher. We zullen ook de Helios Launcher fork aanmaken en de software installeren die nodig is om de Helios Launcher goed te ontwikkelen.
 ## Video
 Deze tutorial is gebaseerd op de video die u hieronder kunt bekijken (**in het Frans**): 
-<iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/YeLf8wJVlVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/YeLf8wJVlVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ## Licentie
 Er was een tijd dat de launcher onder aangepaste licentie was, nu is het beschikbaar onder <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank">MIT Licentie</a>
@@ -155,7 +155,7 @@ Ga tenslotte terug naar de root van u launcher, onder `build`, vervang het `icon
 
 ### Change the welcome text
 Under `app/welcome.ejs`, change the welcome text:
-```diff title="app/welcome.ejs {3-6,8,9,12,13}"
+```diff title="app/welcome.ejs" {3-6,8,9,12,13}
     <div id="welcomeContent">
         <img id="welcomeImageSeal" src="assets/images/SealCircle.png"/>
 -        <span id="welcomeHeader">WELCOME TO WESTEROSCRAFT</span>
@@ -174,15 +174,10 @@ Under `app/welcome.ejs`, change the welcome text:
 
 ### Verander de launcher data folder
 Standaard zal Helios launcher zijn gegevens opslaan in de map ".helioslauncher" op de volgende locatie:
-<Tabs defaultValue="windows" groupId="operating-systems"
-values={[
-{label: "Windows", value:"windows"},
-{label: "macOS", value:"macos"},
-{label: "Linux", value:"linux"}
-]}>
-<TabItem value="windows"><code>%APPDATA%\.helioslauncher\</code></TabItem>
-<TabItem value="macos"><code>~/Library/Application Support/.helioslauncher/</code></TabItem>
-<TabItem value="linux"><code>~/.helioslauncher/</code></TabItem>
+<Tabs defaultValue="windows" groupId="operating-systems">
+<TabItem value="windows" label="Windows"><code>%APPDATA%\.helioslauncher\</code></TabItem>
+<TabItem value="macos" label="macOS"><code>~/Library/Application Support/.helioslauncher/</code></TabItem>
+<TabItem value="linux" label="Linux"><code>~/.helioslauncher/</code></TabItem>
 </Tabs>
 Om dit te veranderen, verander gewoon één regel in `app/assets/js/configmanager.js`
 
@@ -195,14 +190,10 @@ const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.e
 // Forked processes do not have access to electron, so we have this workaround.
 ```
 Als u u launcher al hebt gestart, moet u de map met de naam van u launcher verwijderen, zoals hieronder
-<Tabs groupId="operating-systems" values={[
-{label: "Windows", value:"windows"},
-{label: "macOS", value:"macos"},
-{label: "Linux", value:"linux"}
-]}>
-  <TabItem value="windows"><code>%APPDATA%\Mijn Launcher\</code></TabItem>
-  <TabItem value="macos"><code>~/Library/Application Support/Mijn Launcher/</code></TabItem>
-  <TabItem value="linux"><code>$XDG_CONFIG_HOME/Helios Launcher/</code> or <code>~/.config/Helios Launcher/</code></TabItem>
+<Tabs defaultValue="windows" groupId="operating-systems">
+  <TabItem value="windows" label="Windows"><code>%APPDATA%\Mijn Launcher\</code></TabItem>
+  <TabItem value="macos" label="macOS"><code>~/Library/Application Support/Mijn Launcher/</code></TabItem>
+  <TabItem value="linux" label="Linux"><code>$XDG_CONFIG_HOME/Helios Launcher/</code> or <code>~/.config/Helios Launcher/</code></TabItem>
 </Tabs>
 
 ## Test de veranderingen

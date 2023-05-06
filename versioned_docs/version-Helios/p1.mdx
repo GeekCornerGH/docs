@@ -12,7 +12,7 @@ Pour ce premier tuto consacré au développement du Helios Launcher, nous allons
 
 ## Video
 Ce tutoriel adapté à partir de la vidéo que vous pouvez regardez ci-dessous: 
-<iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/YeLf8wJVlVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/YeLf8wJVlVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ## Licence
 Il fut un temps où le launcher était sous licence personalisée, maintenant il est disponible sous <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank">Licence MIT</a>
@@ -122,10 +122,17 @@ Cliquez sur `Open with Visual Studio Code`, puis sur la gauche, ouvrez le fichie
   }
 }
 ```
-Une fois la modification effectuée, lancez `npm i` dans un Terminal (Terminal --> Nouveau Terminal)
+Une fois la modification effectuée, installez les dépendances via une fenêtre Terminal (Terminal --> Nouveau Terminal)
+
+```bash npm2yarn
+npm i
+```
 
 :::note
-Chaque fois que vous modifierez le fichier `package.json`, vous devrez relancer la commande `npm i`.
+Chaque fois que vous modifierez le fichier `package.json`, vous devrez relancer la commande:
+```bash npm2yarn
+npm i
+```
 :::
 
 ### Changer le nom du launcher
@@ -156,7 +163,7 @@ Enfin, retournez à la racine de votre launcher, sous `build`, remplacez le logo
 
 ### Changer le texte de bienvenue
 Sous `app/welcome.ejs`, changez le texte de bienvenue:
-```diff title="app/welcome.ejs {3-6,8,9,12,13}"
+```diff title="app/welcome.ejs" {3-6,8,9,12,13}
     <div id="welcomeContent">
         <img id="welcomeImageSeal" src="assets/images/SealCircle.png"/>
 -        <span id="welcomeHeader">WELCOME TO WESTEROSCRAFT</span>
@@ -176,15 +183,10 @@ Sous `app/welcome.ejs`, changez le texte de bienvenue:
 
 ### Changer le dossier de données du launcher
 Par défaut, Helios launcher va stocker ses données dans le dossier ".helioslauncher" se trouvant à l'emplacement suivant:
-<Tabs defaultValue="windows" groupId="operating-systems"
-values={[
-{label: "Windows", value:"windows"},
-{label: "macOS", value:"macos"},
-{label: "Linux", value:"linux"}
-]}>
-<TabItem value="windows"><code>%APPDATA%\.helioslauncher\</code></TabItem>
-<TabItem value="macos"><code>~/Library/Application Support/.helioslauncher/</code></TabItem>
-<TabItem value="linux"><code>~/.helioslauncher/</code></TabItem>
+<Tabs defaultValue="windows" groupId="operating-systems">
+<TabItem value="windows" label="Windows"><code>%APPDATA%\.helioslauncher\</code></TabItem>
+<TabItem value="macos" label="macOS"><code>~/Library/Application Support/.helioslauncher/</code></TabItem>
+<TabItem value="linux" label="Linux"><code>~/.helioslauncher/</code></TabItem>
 </Tabs>
 Pour changer celà, il suffit de changer une ligne, dans `app/assets/js/configmanager.js`
 
@@ -197,20 +199,16 @@ const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.e
 // Forked processes do not have access to electron, so we have this workaround.
 ```
 Si vous avez déjà lancé votre launcher, vous devrez supprimer le dossier portant le nom de votre launcher, comme ci-dessous
-<Tabs groupId="operating-systems" values={[
-{label: "Windows", value:"windows"},
-{label: "macOS", value:"macos"},
-{label: "Linux", value:"linux"}
-]}>
-  <TabItem value="windows"><code>%APPDATA%\Mon Launcher\</code></TabItem>
-  <TabItem value="macos"><code>~/Library/Application Support/Mon Launcher/</code></TabItem>
-  <TabItem value="linux"><code>$XDG_CONFIG_HOME/Helios Launcher/</code> ou <code>~/.config/Helios Launcher/</code></TabItem>
+<Tabs defaultValue="windows" groupId="operating-systems">
+  <TabItem value="windows" label="windows"><code>%APPDATA%\Mon Launcher\</code></TabItem>
+  <TabItem value="macos" label="macOS"><code>~/Library/Application Support/Mon Launcher/</code></TabItem>
+  <TabItem value="linux" label="Linux"><code>$XDG_CONFIG_HOME/Helios Launcher/</code> ou <code>~/.config/Helios Launcher/</code></TabItem>
 </Tabs>
 
 ## Tester les modifications
 
 Lancez
-```
+```bash npm2yarn
 npm start
 ```
 et regardez si les changements sont appliqués

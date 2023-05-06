@@ -94,8 +94,11 @@ const config = {
               path: "helios",
               banner: "none",
               badge: false
-            }
+            },
           },
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: false}],
+          ],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -104,9 +107,17 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: false}],
+          ],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           //editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        },
+        pages: {
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: false }],
+          ],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -216,7 +227,7 @@ const config = {
       },
       algolia: {
         appId: "6RFBY32AJ4",
-        apiKey: "f9396edbeb75cecc519ebb5cf49ff001",
+        apiKey: "e2d11db365439274ba5bfded32750b7d",
         indexName: "geekcorner-eu",
         searchPagePath: 'search',
         contextualSearch: true
