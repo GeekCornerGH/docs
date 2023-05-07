@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 ## Введение
 В этом первом уроке, посвященном разработке Helios Launcher, мы изменим страницу приветствия, поменяем логотип, название папки, в которой хранятся данные, и название программы запуска. Мы также создадим форк Helios Launcher и установим программное обеспечение, необходимое для правильной разработки Helios Launcher.
+
 ## Видео
 Это руководство основано на видео, которое вы можете посмотреть ниже (**на французском языке**): 
 <iframe width="713" height="412" src="https://www.youtube-nocookie.com/embed/YeLf8wJVlVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
@@ -121,10 +122,17 @@ import TabItem from '@theme/TabItem';
   }
 }
 ```
-После внесения изменений запустите `npm i` в терминале (Терминал --> Новый терминал)
+После завершения модификации установите зависимости через окно терминала (Терминал --> Новый терминал)
+
+```bash npm2yarn
+npm i
+```
 
 :::note
-Каждый раз, когда вы изменяете файл `package.json`, вам придется снова выполнять команду `npm i`.
+Каждый раз, когда вы изменяете файл `package.json`, вам придется выполнять команду заново:
+```bash npm2yarn
+npm i
+```
 :::
 
 ### Измените имя пусковой установки
@@ -167,7 +175,8 @@ import TabItem from '@theme/TabItem';
 +        <span id="welcomeDescCTA">Приготовьтесь к незабываемому приключению.</span>
         <button id="welcomeButton">
             <div id="welcomeButtonContent">
-                CONTINUE
+-                CONTINUE
++                ПРОДОЛЖИТЬ
                 <svg id="welcomeSVG" viewBox="0 0 24.87 13.97">
                     <defs>
 ```
@@ -199,7 +208,7 @@ const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.e
 ## Протестируйте изменения
 
 Запуск
-```
+```bash npm2yarn
 npm start
 ```
 и посмотрите, применяются ли изменения
