@@ -8,6 +8,6 @@
   ],
   "constraints": {
     "node": ">=18.0.0",
-    "pnpm": "latest"
+    "pnpm": ">=8.0.0"
   }
 }
