@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgeek_docs=self.webpackChunkgeek_docs||[]).push([[127],{8340:(e,l,t)=>{t.r(l),t.d(l,{default:()=>r});var c=t(9496),a=t(6393),n=t(6664),s=t(2298);function r(){const e=(0,a.ZP)();return c.createElement(n.Z,null,c.createElement("h2",null,"Global data"),c.createElement(s.Z,{src:e,collapseDepth:3}))}}}]);
