@@ -33,8 +33,8 @@ dependencies:
     specifier: github:flexanalytics/plugin-image-zoom
     version: github.com/flexanalytics/plugin-image-zoom/3e64669f3c8fb998a556432ca3f56e0f617454f2
   prism-react-renderer:
-    specifier: ^1.3.5
-    version: 1.3.5(react@18.0.0)
+    specifier: ^2.0.0
+    version: 2.0.0(react@18.0.0)
   react:
     specifier: ^18.0.0
     version: 18.0.0
@@ -7084,6 +7084,15 @@ packages:
     peerDependencies:
       react: '>=0.14.9'
     dependencies:
+      react: 18.0.0
+    dev: false
+
+  /prism-react-renderer@2.0.0(react@18.0.0):
+    resolution: {integrity: sha512-Pmgn/6/XaxmwSuC5InkPQ3xq7f1J/SMKdvnxAQZVE7oBH11ctIHBGc2xLWmc8g0/CG+YQwbi5JTifP01cR7kvA==}
+    peerDependencies:
+      react: '>=16.0.0'
+    dependencies:
+      clsx: 1.2.1
       react: 18.0.0
     dev: false
 
