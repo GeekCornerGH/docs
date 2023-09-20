@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgeek_docs=self.webpackChunkgeek_docs||[]).push([[627],{2532:(e,t,c)=>{c.r(t),c.d(t,{default:()=>u});var n=c(5170),l=c(3650),s=c(3685),r=c(9758);function u(){const{siteConfig:e}=(0,l.Z)();return n.createElement(s.Z,null,n.createElement("h2",null,"Site config"),n.createElement(r.Z,{src:e,collapseDepth:3}))}}}]);
