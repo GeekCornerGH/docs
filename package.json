@@ -29,7 +29,7 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@algolia/client-search": "4.21.1",
+    "@algolia/client-search": "4.22.0",
     "@docusaurus/module-type-aliases": "2.4.3",
     "@docusaurus/types": "2.4.3",
     "@tsconfig/docusaurus": "2.0.2",
