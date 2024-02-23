@@ -185,8 +185,8 @@ Sous `app/welcome.ejs`, changez le texte de bienvenue:
 Par défaut, Helios launcher va stocker ses données dans le dossier ".helioslauncher" se trouvant à l'emplacement suivant:
 <Tabs defaultValue="windows" groupId="operating-systems">
 <TabItem value="windows" label="Windows"><code>%APPDATA%\.helioslauncher</code></TabItem>
-<TabItem value="macos" label="macOS"><code>~/Library/Application Support/.helioslauncher</code></TabItem>
-<TabItem value="linux" label="Linux"><code>~/.helioslauncher</code></TabItem>
+<TabItem value="macos" label="macOS"><code>\~/Library/Application Support/.helioslauncher</code></TabItem>
+<TabItem value="linux" label="Linux"><code>\~/.helioslauncher</code></TabItem>
 </Tabs>
 Pour changer celà, il suffit de changer une ligne, dans `app/assets/js/configmanager.js`
 
@@ -201,8 +201,8 @@ const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.e
 Si vous avez déjà lancé votre launcher, vous devrez supprimer le dossier portant le nom de votre launcher, comme ci-dessous
 <Tabs defaultValue="windows" groupId="operating-systems">
   <TabItem value="windows" label="windows"><code>%APPDATA%\Mon Launcher</code></TabItem>
-  <TabItem value="macos" label="macOS"><code>~/Library/Application Support/Mon Launcher</code></TabItem>
-  <TabItem value="linux" label="Linux"><code>$XDG_CONFIG_HOME/Helios Launcher</code> ou <code>~/.config/Helios Launcher</code></TabItem>
+  <TabItem value="macos" label="macOS"><code>\~/Library/Application Support/Mon Launcher</code></TabItem>
+  <TabItem value="linux" label="Linux"><code>$XDG_CONFIG_HOME/Helios Launcher</code> ou <code>\~/.config/Helios Launcher</code></TabItem>
 </Tabs>
 
 ## Tester les modifications

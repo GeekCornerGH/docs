@@ -185,8 +185,8 @@ Under `app/welcome.ejs`, change the welcome text:
 Standaard zal Helios launcher zijn gegevens opslaan in de map ".helioslauncher" op de volgende locatie:
 <Tabs defaultValue="windows" groupId="operating-systems">
 <TabItem value="windows" label="Windows"><code>%APPDATA%\.helioslauncher</code></TabItem>
-<TabItem value="macos" label="macOS"><code>~/Library/Application Support/.helioslauncher</code></TabItem>
-<TabItem value="linux" label="Linux"><code>~/.helioslauncher</code></TabItem>
+<TabItem value="macos" label="macOS"><code>\~/Library/Application Support/.helioslauncher</code></TabItem>
+<TabItem value="linux" label="Linux"><code>\~/.helioslauncher</code></TabItem>
 </Tabs>
 Om dit te veranderen, verander gewoon één regel in `app/assets/js/configmanager.js`
 
@@ -201,8 +201,8 @@ const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.e
 Als u u launcher al hebt gestart, moet u de map met de naam van u launcher verwijderen, zoals hieronder
 <Tabs defaultValue="windows" groupId="operating-systems">
   <TabItem value="windows" label="Windows"><code>%APPDATA%\Mijn Launcher</code></TabItem>
-  <TabItem value="macos" label="macOS"><code>~/Library/Application Support/Mijn Launcher</code></TabItem>
-  <TabItem value="linux" label="Linux"><code>$XDG_CONFIG_HOME/Helios Launcher</code> or <code>~/.config/Helios Launcher</code></TabItem>
+  <TabItem value="macos" label="macOS"><code>\~/Library/Application Support/Mijn Launcher</code></TabItem>
+  <TabItem value="linux" label="Linux"><code>$XDG_CONFIG_HOME/Helios Launcher</code> or <code>\~/.config/Helios Launcher</code></TabItem>
 </Tabs>
 
 ## Test de veranderingen
