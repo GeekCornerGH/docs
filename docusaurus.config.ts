@@ -1,11 +1,9 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
+import npm2yarn from "@docusaurus/remark-plugin-npm2yarn"
 
-const lightCodeTheme = require('prism-react-renderer').themes.github;
-const darkCodeTheme = require('prism-react-renderer').themes.dracula;
-
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+const config: Config = {
   title: 'GeekCorner',
   tagline: 'Bienvenue! Vous trouverez sur ce site la documentation relative aux tutos sur ma chaîne YouTube.',
   url: 'https://docs.geekcorner.eu.org',
@@ -64,7 +62,7 @@ const config = {
         id: 'helios',
         path: 'helios',
         routeBasePath: 'helios',
-        sidebarPath: require.resolve('./sidebars.js'),
+        sidebarPath: './sidebars.ts',
       },
     ]
   ],
@@ -72,8 +70,7 @@ const config = {
   presets: [
     [
       '@docusaurus/preset-classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         debug: true, // This will enable the plugin in production
         sitemap: {
           changefreq: 'daily',
@@ -82,7 +79,7 @@ const config = {
           filename: 'sitemap.xml',
         },
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: './sidebars.ts',
           versions: {
             current: {
               label: "Divers",
@@ -97,7 +94,7 @@ const config = {
             },
           },
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: false}],
+            [npm2yarn, { sync: false }],
           ],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -108,7 +105,7 @@ const config = {
         blog: {
           showReadingTime: true,
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: false}],
+            [npm2yarn, { sync: false }],
           ],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -116,19 +113,18 @@ const config = {
         },
         pages: {
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: false }],
+            [npm2yarn, { sync: false }],
           ],
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: 'src/css/custom.css',
         },
-      }),
+      } satisfies Preset.Options,
     ],
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       colorMode: {
         defaultMode: "dark",
         respectPrefersColorScheme: false,
@@ -221,9 +217,9 @@ const config = {
         copyright: `Créé avec <a href="https://docusaurus.io">Docusaurus</a>`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-        additionalLanguages: ['ejs']
+        theme: prismThemes.vsLight,
+        darkTheme: prismThemes.dracula,
+        additionalLanguages: ['ejs', 'json', 'bash', 'diff', 'markup-templating']
       },
       algolia: {
         appId: "6RFBY32AJ4",
@@ -232,7 +228,7 @@ const config = {
         searchPagePath: 'search',
         contextualSearch: true
       }
-    }),
+    } satisfies Preset.ThemeConfig,
 };
 
-module.exports = config;
+export default config;
